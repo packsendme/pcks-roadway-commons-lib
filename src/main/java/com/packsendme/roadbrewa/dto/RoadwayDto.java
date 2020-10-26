@@ -127,7 +127,7 @@ public class RoadwayDto{
 		return roadway;
 	}
 	
-	public List<RoadwayDto> Entity_TO_BRE(List<Roadway> roadway_L) throws ParseException {
+	public List<RoadwayDto> Entity_TO_Dto(List<Roadway> roadway_L) throws ParseException {
 		List<RoadwayDto> roadwayDto_L = new ArrayList<RoadwayDto>(); 
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		CategoryDto categoryObj = new CategoryDto();
