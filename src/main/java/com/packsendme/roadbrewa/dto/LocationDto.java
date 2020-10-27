@@ -62,8 +62,9 @@ public class LocationDto implements Serializable{
 	
 	public List<LocationDto> Entity_To_Dto(List<Location> location_L) {
 		List<LocationDto> locationDto_L = new ArrayList<LocationDto>();
+		LocationDto locationDto = null;
 		for(Location l : location_L) {
-			LocationDto locationDto = new LocationDto();
+			locationDto = new LocationDto();
 			locationDto.id = l.id;
 			locationDto.countryName = l.countryName;
 			locationDto.cityName = l.cityName;
