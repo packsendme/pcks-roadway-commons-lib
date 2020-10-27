@@ -1,5 +1,6 @@
 package com.packsendme.roadbrewa.dto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,12 @@ import lombok.Setter;
 
 @Getter 
 @Setter
-public class UnityMeasurementDto {
+public class UnityMeasurementDto implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	public String id;	

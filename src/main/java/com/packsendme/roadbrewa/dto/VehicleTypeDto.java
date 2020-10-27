@@ -1,5 +1,6 @@
 package com.packsendme.roadbrewa.dto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,12 @@ import lombok.Setter;
 
 @Getter 
 @Setter
-public class VehicleTypeDto {
+public class VehicleTypeDto implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public String id;
 	public String type_vehicle;

@@ -1,11 +1,18 @@
 package com.packsendme.roadbrewa.dto;
 
+import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter 
 @Setter 
-public class CostsDto {
+public class CostsDto implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 
 	// Fixed based cost (weight, distance...)
