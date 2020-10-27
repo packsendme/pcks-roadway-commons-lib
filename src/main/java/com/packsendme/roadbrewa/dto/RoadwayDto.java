@@ -159,7 +159,7 @@ public class RoadwayDto implements Serializable{
 			
 			// LOCATION-Entity
 			List<LocationDto> locationDto_L = new ArrayList<LocationDto>();
-			if(roadwayDto.locations.size() >= 1) {
+			if(roadway.locations.size() >= 1) {
 				locationDto_L = locationObj.Entity_To_Dto(roadway.locations);
 			}
 			roadwayDto.locations = locationDto_L;
