@@ -1,5 +1,6 @@
 package com.packsendme.roadbrewa.dto;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,7 +19,12 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-public class RoadwayDto{
+public class RoadwayDto implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	public String id;
 	public String name_bre;

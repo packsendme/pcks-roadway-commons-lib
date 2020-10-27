@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import com.packsendme.roadbrewa.component.RoadwayManagerConstants;
 import com.packsendme.roadbrewa.entity.Bodywork;
 
@@ -14,7 +12,6 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-@Document(collection = "pcks_roadbrewa_bodywork")
 public class BodyworkDto  implements Serializable{
 	
 	/**
