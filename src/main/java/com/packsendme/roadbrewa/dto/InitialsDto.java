@@ -40,7 +40,7 @@ public class InitialsDto implements Serializable{
 	 * ==============================================
 	 */
 	
-	public Initials Dto_TO_Entity(InitialsDto initials, Initials entity, String typeOperation) {
+	public Initials dtoTOentity(InitialsDto initials, Initials entity, String typeOperation) {
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new Initials();
 		}
@@ -48,7 +48,7 @@ public class InitialsDto implements Serializable{
 		return entity;
 	}
 	
-	public List<InitialsDto> Entity_TO_Entity(List<Initials> initials_L) {
+	public List<InitialsDto> entityTOdto(List<Initials> initials_L) {
 
 		List<InitialsDto> initialsDto_L = new ArrayList<InitialsDto>();
 		InitialsDto initialsDto = new InitialsDto();

@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import com.packsendme.roadbrewa.component.RoadwayManagerConstants;
 import com.packsendme.roadbrewa.entity.Category;
+import com.packsendme.roadbrewa.entity.Costs;
 import com.packsendme.roadbrewa.entity.Location;
 import com.packsendme.roadbrewa.entity.Roadway;
-import com.packsendme.roadbrewa.entity.Costs;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -64,7 +65,7 @@ public class RoadwayDto implements Serializable{
 	 * ==============================================
 	 */
 	
-	public Roadway Dto_TO_Entity(RoadwayDto roadwayDto, Roadway roadway, String operationType) throws ParseException {
+	public Roadway dtoTOentity(RoadwayDto roadwayDto, Roadway roadway, String operationType) throws ParseException {
 		CategoryDto categoryObj = new CategoryDto();
 		LocationDto locationObj = new LocationDto();
 		
@@ -85,7 +86,7 @@ public class RoadwayDto implements Serializable{
 		if(roadwayDto.categories.size() >= 1) {
 			for(CategoryDto categoryDto :  roadwayDto.categories) {
 				Category categoryNew = new Category(); 
-				Category category = categoryObj.Dto_TO_Entity(categoryDto, categoryNew, operationType);
+				Category category = categoryObj.dtoTOentity(categoryDto, categoryNew, operationType);
 				categoriesL.add(category);
 			}
 			roadway.categories = categoriesL;
@@ -97,7 +98,7 @@ public class RoadwayDto implements Serializable{
 			
 			for(LocationDto locationDto : roadwayDto.locations) {
 				Location locationNew = new Location();
-				Location locationModel_Obj = locationObj.Dto_TO_Entity(locationDto, locationNew, operationType);
+				Location locationModel_Obj = locationObj.dtoTOentity(locationDto, locationNew, operationType);
 				location_L.add(locationModel_Obj);
 			}
 			roadway.locations = location_L;
@@ -133,7 +134,7 @@ public class RoadwayDto implements Serializable{
 		return roadway;
 	}
 	
-	public List<RoadwayDto> Entity_TO_Dto(List<Roadway> roadway_L) throws ParseException {
+	public List<RoadwayDto> entityTOdto(List<Roadway> roadway_L) throws ParseException {
 		List<RoadwayDto> roadwayDto_L = new ArrayList<RoadwayDto>(); 
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		CategoryDto categoryObj = new CategoryDto();
@@ -152,7 +153,7 @@ public class RoadwayDto implements Serializable{
 			// CATEGORY-Entity
 			List<CategoryDto> categoriesDto_L = new ArrayList<CategoryDto>();
 			if(roadway.categories.size() >= 1) {
-				categoriesDto_L = categoryObj.Entity_TO_Dto(roadway.categories);
+				categoriesDto_L = categoryObj.entityTOdto(roadway.categories);
 			}
 			roadwayDto.categories = categoriesDto_L;
 	
@@ -160,7 +161,7 @@ public class RoadwayDto implements Serializable{
 			// LOCATION-Entity
 			List<LocationDto> locationDto_L = new ArrayList<LocationDto>();
 			if(roadway.locations.size() >= 1) {
-				locationDto_L = locationObj.Entity_To_Dto(roadway.locations);
+				locationDto_L = locationObj.entityTOdto(roadway.locations);
 			}
 			roadwayDto.locations = locationDto_L;
 			

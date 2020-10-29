@@ -44,7 +44,7 @@ public class UnityMeasurementDto implements Serializable{
 	 * ==============================================
 	 */
 	
-	public UnityMeasurement Dto_TO_Entity(UnityMeasurementDto unityDto, UnityMeasurement entity, String typeOperation) {
+	public UnityMeasurement dtoTOentity(UnityMeasurementDto unityDto, UnityMeasurement entity, String typeOperation) {
 
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new UnityMeasurement();
@@ -54,7 +54,7 @@ public class UnityMeasurementDto implements Serializable{
 		return entity;
 	}
 	
-	public List<UnityMeasurementDto> Entity_TO_Dto(List<UnityMeasurement> unityMeasurement_L) {
+	public List<UnityMeasurementDto> entityTOdto(List<UnityMeasurement> unityMeasurement_L) {
 
 		List<UnityMeasurementDto> unityMeasurementDto_L = new ArrayList<UnityMeasurementDto>();
 		UnityMeasurementDto unityMeasurementDto = null;

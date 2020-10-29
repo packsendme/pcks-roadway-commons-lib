@@ -53,7 +53,7 @@ public class VehicleDto implements Serializable{
 	 * ==============================================
 	 */
 	
-	public Vehicle Dto_TO_Entity(VehicleDto vehicle, Vehicle entity, String typeOperation) {
+	public Vehicle dtoTOentity(VehicleDto vehicle, Vehicle entity, String typeOperation) {
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new Vehicle();
 		}
