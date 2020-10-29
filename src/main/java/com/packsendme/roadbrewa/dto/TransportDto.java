@@ -55,6 +55,7 @@ public class TransportDto implements Serializable{
 		List<TransportDto> transportDto_L = new ArrayList<TransportDto>();
 		TransportDto transportDto = new TransportDto();
 		for(Transport transport : tranport_l) {
+			transportDto = new TransportDto();
 			transportDto.id = transport.id;
 			transportDto.name_transport = transport.name_transport;
 			transportDto.initials = transport.initials;
