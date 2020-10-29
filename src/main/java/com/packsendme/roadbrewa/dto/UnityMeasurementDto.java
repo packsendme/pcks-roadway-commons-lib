@@ -61,6 +61,7 @@ public class UnityMeasurementDto implements Serializable{
 		
 		for(UnityMeasurement unityMeasurement :  unityMeasurement_L) {
 			unityMeasurementDto = new UnityMeasurementDto();  
+			unityMeasurementDto.id = unityMeasurement.id;
 			unityMeasurementDto.unitMeasurement = unityMeasurement.unitMeasurement;
 			unityMeasurementDto.origin_country = unityMeasurement.origin_country;
 			unityMeasurementDto_L.add(unityMeasurementDto);
