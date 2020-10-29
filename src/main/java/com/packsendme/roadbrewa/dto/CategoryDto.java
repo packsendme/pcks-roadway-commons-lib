@@ -55,7 +55,7 @@ public class CategoryDto implements Serializable{
 	 * ==============================================
 	 */
 	
-	public List<CategoryDto> Entity_TO_Dto(List<Category> categories_L) {
+	public List<CategoryDto> entityTOdto(List<Category> categories_L) {
 		List<CategoryDto> categoryDto_L = new ArrayList<CategoryDto>();
 
 		for(Category categoryEntity : categories_L) {
@@ -83,7 +83,7 @@ public class CategoryDto implements Serializable{
 		return categoryDto_L;
 	}
 	
-	public Category Dto_TO_Entity(CategoryDto categoryDto, Category category, String operationType) {
+	public Category dtoTOentity(CategoryDto categoryDto, Category category, String operationType) {
 		
 		if(operationType.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			category = new Category();

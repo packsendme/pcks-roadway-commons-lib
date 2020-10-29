@@ -42,7 +42,7 @@ public class VehicleTypeDto implements Serializable{
 	 */
 
 
-	public VehicleType Dto_TO_Entity(VehicleTypeDto vehicleTypeDto, VehicleType entity, String typeOperation) {
+	public VehicleType dtoTOentity(VehicleTypeDto vehicleTypeDto, VehicleType entity, String typeOperation) {
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new VehicleType();
 		}
@@ -50,7 +50,7 @@ public class VehicleTypeDto implements Serializable{
 		return entity;
 	}
 	
-	public List<VehicleTypeDto> Entity_TO_Entity(List<VehicleType> vehicleType_L) {
+	public List<VehicleTypeDto> entityTOdto(List<VehicleType> vehicleType_L) {
 		List<VehicleTypeDto> vehicleTypeDto_L = new ArrayList<VehicleTypeDto>();
 		VehicleTypeDto vehicleTypeDto = null;
 		

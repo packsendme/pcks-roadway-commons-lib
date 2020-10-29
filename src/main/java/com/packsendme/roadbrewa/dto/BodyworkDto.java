@@ -43,7 +43,7 @@ public class BodyworkDto  implements Serializable{
 	 * ==============================================
 	 */
 
-	public Bodywork Dto_TO_Entity(BodyworkDto bodyworkDto, Bodywork entity, String operationType) {
+	public Bodywork dtoTOentity(BodyworkDto bodyworkDto, Bodywork entity, String operationType) {
 		if(operationType.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new Bodywork();
 		}
@@ -52,7 +52,7 @@ public class BodyworkDto  implements Serializable{
 		return entity;
 	}
 	
-	public List<BodyworkDto> Entity_TO_Dto(List<Bodywork> bodywork_L) {
+	public List<BodyworkDto> entityTOdto(List<Bodywork> bodywork_L) {
 		BodyworkDto bodyworkDto = null;
 		List<BodyworkDto> bodyworkDto_L = new ArrayList<BodyworkDto>();
 		

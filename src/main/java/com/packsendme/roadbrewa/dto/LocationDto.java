@@ -48,7 +48,7 @@ public class LocationDto implements Serializable{
 	 *  L O C A T I O N  - P A R S E R  
 	 * ==============================================
 	 */
-	public Location Dto_TO_Entity(LocationDto locationDto, Location entity, String operationType) {
+	public Location dtoTOentity(LocationDto locationDto, Location entity, String operationType) {
 		
 		if(operationType.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new Location();
@@ -60,7 +60,7 @@ public class LocationDto implements Serializable{
 		return entity;
 	}
 	
-	public List<LocationDto> Entity_To_Dto(List<Location> location_L) {
+	public List<LocationDto> entityTOdto(List<Location> location_L) {
 		List<LocationDto> locationDto_L = new ArrayList<LocationDto>();
 		LocationDto locationDto = null;
 		for(Location l : location_L) {
