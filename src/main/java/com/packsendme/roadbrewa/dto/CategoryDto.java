@@ -57,9 +57,10 @@ public class CategoryDto implements Serializable{
 	
 	public List<CategoryDto> entityTOdto(List<Category> categories_L) {
 		List<CategoryDto> categoryDto_L = new ArrayList<CategoryDto>();
-
+		CategoryDto categoryDTO = null;
+		
 		for(Category categoryEntity : categories_L) {
-			CategoryDto categoryDTO = new CategoryDto(); 
+			categoryDTO = new CategoryDto(); 
 			categoryDTO.id = categoryEntity.id;
 			categoryDTO.name_category = categoryEntity.name_category;
 			categoryDTO.transport = categoryEntity.transport;

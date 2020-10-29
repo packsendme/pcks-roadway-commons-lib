@@ -51,9 +51,10 @@ public class InitialsDto implements Serializable{
 	public List<InitialsDto> entityTOdto(List<Initials> initials_L) {
 
 		List<InitialsDto> initialsDto_L = new ArrayList<InitialsDto>();
-		InitialsDto initialsDto = new InitialsDto();
+		InitialsDto initialsDto = null;
 		
 		for(Initials initials : initials_L) {
+			initialsDto = new InitialsDto();
 			initialsDto.id = initials.id;
 			initialsDto.name = initials.name;
 			initialsDto_L.add(initialsDto);

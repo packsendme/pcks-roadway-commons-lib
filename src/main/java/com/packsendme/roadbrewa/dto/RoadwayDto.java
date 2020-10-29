@@ -82,10 +82,10 @@ public class RoadwayDto implements Serializable{
 		
 		// CATEGORY-Entity
 		List<Category> categoriesL = new ArrayList<Category>();
-
+		Category categoryNew = null;
 		if(roadwayDto.categories.size() >= 1) {
 			for(CategoryDto categoryDto :  roadwayDto.categories) {
-				Category categoryNew = new Category(); 
+				categoryNew = new Category(); 
 				Category category = categoryObj.dtoTOentity(categoryDto, categoryNew, operationType);
 				categoriesL.add(category);
 			}
@@ -139,9 +139,9 @@ public class RoadwayDto implements Serializable{
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		CategoryDto categoryObj = new CategoryDto();
 		LocationDto locationObj = new LocationDto();
-		
+		RoadwayDto roadwayDto = null;
 		for(Roadway roadway : roadway_L) {
-			RoadwayDto roadwayDto = new RoadwayDto(); 
+			roadwayDto = new RoadwayDto(); 
 			roadwayDto.id = roadway.id;
 			roadwayDto.name_bre = roadway.name_bre;
 			roadwayDto.transport = roadway.transport;
