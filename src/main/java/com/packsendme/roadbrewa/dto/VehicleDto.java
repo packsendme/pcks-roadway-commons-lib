@@ -68,7 +68,7 @@ public class VehicleDto implements Serializable{
 	}
 	
 	
-	public List<VehicleDto> Entity_TO_Dto(List<Vehicle> vehicle_L) {
+	public List<VehicleDto> entityTOdto(List<Vehicle> vehicle_L) {
 
 		List<VehicleDto> vehicleDto_L = new ArrayList<VehicleDto>();
 		VehicleDto vehicleDto = null;
