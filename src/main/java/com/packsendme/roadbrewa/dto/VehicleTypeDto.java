@@ -56,6 +56,7 @@ public class VehicleTypeDto implements Serializable{
 		
 		for(VehicleType vehicleType : vehicleType_L) {
 			vehicleTypeDto = new VehicleTypeDto();
+			vehicleTypeDto.id = vehicleType.id;
 			vehicleTypeDto.type_vehicle = vehicleType.type_vehicle;
 			vehicleTypeDto_L.add(vehicleTypeDto);
 		}
