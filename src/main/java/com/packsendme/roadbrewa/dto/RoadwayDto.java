@@ -30,6 +30,7 @@ public class RoadwayDto implements Serializable{
 	public String id;
 	public String name_bre;
 	public String transport;
+	public String blocked_id;
 	public String date_creation;
 	public String date_change;
 	public List<CategoryDto> categories = new ArrayList<CategoryDto>();
@@ -39,13 +40,14 @@ public class RoadwayDto implements Serializable{
 	public String status;
 	
 
-	public RoadwayDto(String id, String name_bre, String transport, String date_creation, String date_change,
+	public RoadwayDto(String id, String name_bre, String transport, String blocked_id, String date_creation, String date_change,
 			List<CategoryDto> categories, List<CostsDto> costs, List<LocationDto> locations, String version,
 			String status) {
 		super();
 		this.id = id;
 		this.name_bre = name_bre;
 		this.transport = transport;
+		this.blocked_id = blocked_id;
 		this.date_creation = date_creation;
 		this.date_change = date_change;
 		this.categories = categories;
@@ -75,11 +77,12 @@ public class RoadwayDto implements Serializable{
 		
 		roadway.name_bre = roadwayDto.name_bre;
 		roadway.transport = roadwayDto.transport;
+		roadway.blocked_id = roadwayDto.blocked_id;
 		roadway.date_creation = roadwayDto.date_creation; //dateFormat.parse(roadwayBRE.date_creation);
 		roadway.date_change = roadwayDto.date_change; //dateFormat.parse(roadwayBRE.date_change);
 		roadway.status = roadwayDto.status;
 		roadway.version = roadwayDto.version;
-		
+
 		// CATEGORY-Entity
 		List<Category> categoriesL = new ArrayList<Category>();
 		Category categoryNew = null;
@@ -145,6 +148,7 @@ public class RoadwayDto implements Serializable{
 			roadwayDto.id = roadway.id;
 			roadwayDto.name_bre = roadway.name_bre;
 			roadwayDto.transport = roadway.transport;
+			roadwayDto.blocked_id = roadway.blocked_id;
 			roadwayDto.date_creation = roadway.date_creation; //dateFormat.format(roadwayModel_Obj.date_creation);
 			roadwayDto.date_change = roadway.date_change;// dateFormat.format(roadwayModel_Obj.date_change);
 			roadwayDto.status = roadway.status;
