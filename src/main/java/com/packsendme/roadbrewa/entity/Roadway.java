@@ -26,6 +26,7 @@ public class Roadway implements Serializable {
 	public String id;
 	public String name_bre;
 	public String transport;
+	public String blocked_id;
 	public String date_creation;
 	public String date_change;
 	public List<Category> categories = new ArrayList<Category>();
@@ -34,12 +35,13 @@ public class Roadway implements Serializable {
 	public String version;
 	public String status;
 
-	public Roadway(String name_bre, String transport, String date_creation, String date_change,
+	public Roadway(String name_bre, String transport,  String blocked_id, String date_creation, String date_change,
 			List<Category> categories, Map<String, List<Costs>> costs, List<Location> locations, String version,
 			String status) {
 		super();
 		this.name_bre = name_bre;
 		this.transport = transport;
+		this.blocked_id = blocked_id;
 		this.date_creation = date_creation;
 		this.date_change = date_change;
 		this.categories = categories;
