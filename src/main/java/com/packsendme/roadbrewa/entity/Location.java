@@ -1,6 +1,7 @@
 package com.packsendme.roadbrewa.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -24,7 +25,7 @@ public class Location implements Serializable{
 	public String codCountry;
 	public String countryName;
 	public boolean citySpecify;
-	public List<String> cities;
+	public List<String> cities = new ArrayList<String>();
 	
 
  
