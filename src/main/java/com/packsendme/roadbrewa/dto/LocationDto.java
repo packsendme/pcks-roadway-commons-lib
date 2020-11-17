@@ -26,7 +26,7 @@ public class LocationDto implements Serializable{
 	public String codCountry;
 	public String countryName;
 	public boolean citySpecify;
-	public List<String> cities;
+	public List<String> cities = new ArrayList<String>(); 
 	
 	
 
@@ -58,8 +58,6 @@ public class LocationDto implements Serializable{
 		entity.codCountry = locationDto.codCountry;
 		entity.countryName = locationDto.countryName;
 		entity.citySpecify = locationDto.citySpecify;
-		System.out.println(" TAMANHO LISTA SAVE "+ locationDto.cities);
-
 		if(locationDto.citySpecify == true) {
 			for(String city : locationDto.cities) {
 				entity.cities.add(city);
@@ -71,11 +69,8 @@ public class LocationDto implements Serializable{
 	public List<LocationDto> entityTOdto(List<Location> location_L) {
 		List<LocationDto> locationDto_L = new ArrayList<LocationDto>();
 		LocationDto locationDto = null;
-		List<String> countryL = new ArrayList<String>();
-		
 		
 		for(Location l : location_L) {
-			System.out.println(" TAMANHO LISTA LIST "+ l.cities.size());
 			locationDto = new LocationDto();
 			locationDto.id = l.id;
 			locationDto.codCountry = l.codCountry;
@@ -83,11 +78,9 @@ public class LocationDto implements Serializable{
 			locationDto.citySpecify = l.citySpecify;
 			if(locationDto.citySpecify == true) {
 				for(String city : l.cities) {
-					System.out.println(" CITY  "+ city);
-					countryL.add(city);
+					locationDto.cities.add(city);
 				}
 			}
-			locationDto.cities.addAll(countryL);
 			locationDto_L.add(locationDto);
 		}
 		return locationDto_L;
