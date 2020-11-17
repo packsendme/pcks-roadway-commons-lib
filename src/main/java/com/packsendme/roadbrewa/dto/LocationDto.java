@@ -69,18 +69,20 @@ public class LocationDto implements Serializable{
 	public List<LocationDto> entityTOdto(List<Location> location_L) {
 		List<LocationDto> locationDto_L = new ArrayList<LocationDto>();
 		LocationDto locationDto = null;
-		for(Location l : location_L) {
-			locationDto.codCountry = l.codCountry;
-			locationDto = new LocationDto();
-			locationDto.id = l.id;
-			locationDto.countryName = l.countryName;
-			locationDto.citySpecify = l.citySpecify;
-			if(locationDto.citySpecify == true) {
-				for(String city : l.cities) {
-					locationDto.cities.add(city);
+		if(location_L != null) {
+			for(Location l : location_L) {
+				locationDto.codCountry = l.codCountry;
+				locationDto = new LocationDto();
+				locationDto.id = l.id;
+				locationDto.countryName = l.countryName;
+				locationDto.citySpecify = l.citySpecify;
+				if(locationDto.citySpecify == true) {
+					for(String city : l.cities) {
+						locationDto.cities.add(city);
+					}
 				}
+				locationDto_L.add(locationDto);
 			}
-			locationDto_L.add(locationDto);
 		}
 		return locationDto_L;
 	}
