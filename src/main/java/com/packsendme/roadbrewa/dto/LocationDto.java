@@ -58,6 +58,7 @@ public class LocationDto implements Serializable{
 		entity.codCountry = locationDto.codCountry;
 		entity.countryName = locationDto.countryName;
 		entity.citySpecify = locationDto.citySpecify;
+		entity.cities = new ArrayList<String>();
 		if(locationDto.citySpecify == true) {
 			for(String city : locationDto.cities) {
 				entity.cities.add(city);
