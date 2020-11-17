@@ -23,18 +23,20 @@ public class LocationDto implements Serializable{
 	 * 
 	 */
 	public String id;
-	public String countryName;
-	public String cityName;
-	public String stateName;
 	public String codCountry;
+	public String countryName;
+	public boolean citySpecify;
+	public List<String> cities;
 	
 	
-	public LocationDto(String countryName, String cityName, String stateName, String codCountry) {
+
+
+	public LocationDto(String codCountry, String countryName, boolean citySpecify, List<String> cities) {
 		super();
-		this.countryName = countryName;
-		this.cityName = cityName;
-		this.stateName = stateName;
 		this.codCountry = codCountry;
+		this.countryName = countryName;
+		this.citySpecify = citySpecify;
+		this.cities = cities;
 	}
 
 
@@ -53,10 +55,14 @@ public class LocationDto implements Serializable{
 		if(operationType.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new Location();
 		}
-		entity.countryName = locationDto.countryName;
-		entity.cityName = locationDto.cityName;
-		entity.stateName = locationDto.stateName;
 		entity.codCountry = locationDto.codCountry;
+		entity.countryName = locationDto.countryName;
+		entity.citySpecify = locationDto.citySpecify;
+		if(locationDto.citySpecify == true) {
+			for(String city : locationDto.cities) {
+				entity.cities.add(city);
+			}
+		}
 		return entity;
 	}
 	
@@ -64,12 +70,16 @@ public class LocationDto implements Serializable{
 		List<LocationDto> locationDto_L = new ArrayList<LocationDto>();
 		LocationDto locationDto = null;
 		for(Location l : location_L) {
+			locationDto.codCountry = l.codCountry;
 			locationDto = new LocationDto();
 			locationDto.id = l.id;
 			locationDto.countryName = l.countryName;
-			locationDto.cityName = l.cityName;
-			locationDto.stateName = l.stateName;
-			locationDto.codCountry = l.codCountry;
+			locationDto.citySpecify = l.citySpecify;
+			if(locationDto.citySpecify == true) {
+				for(String city : l.cities) {
+					locationDto.cities.add(city);
+				}
+			}
 			locationDto_L.add(locationDto);
 		}
 		return locationDto_L;

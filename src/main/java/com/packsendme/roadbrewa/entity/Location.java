@@ -1,6 +1,7 @@
 package com.packsendme.roadbrewa.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -20,19 +21,23 @@ public class Location implements Serializable{
 	
 	@Id
 	public String id;
-	public String countryName;
-	public String cityName;
-	public String stateName;
 	public String codCountry;
+	public String countryName;
+	public boolean citySpecify;
+	public List<String> cities;
 	
 
-	public Location(String countryName, String cityName, String stateName, String codCountry) {
+ 
+	public Location(String codCountry, String countryName, boolean citySpecify, List<String> cities) {
 		super();
-		this.countryName = countryName;
-		this.cityName = cityName;
-		this.stateName = stateName;
 		this.codCountry = codCountry;
+		this.countryName = countryName;
+		this.citySpecify = citySpecify;
+		this.cities = cities;
 	}
+
+
+
 
 
 	public Location() {
