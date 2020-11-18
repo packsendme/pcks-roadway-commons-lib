@@ -25,13 +25,15 @@ public class UnityMeasurementDto implements Serializable{
 	public String id;	
 	public String unitMeasurement;
 	public String region;
+	public String identifier;
 	
 	
 	
-	public UnityMeasurementDto(String unitMeasurement, String region) {
+	public UnityMeasurementDto(String unitMeasurement, String region, String identifier) {
 		super();
 		this.unitMeasurement = unitMeasurement;
 		this.region = region;
+		this.identifier = identifier;
 	}
 
 
@@ -55,6 +57,7 @@ public class UnityMeasurementDto implements Serializable{
 		}
 		entity.unitMeasurement = unityDto.unitMeasurement;
 		entity.region = unityDto.region;
+		entity.identifier = unityDto.identifier;
 		return entity;
 	}
 	
@@ -68,6 +71,7 @@ public class UnityMeasurementDto implements Serializable{
 			unityMeasurementDto.id = unityMeasurement.id;
 			unityMeasurementDto.unitMeasurement = unityMeasurement.unitMeasurement;
 			unityMeasurementDto.region = unityMeasurement.region;
+			unityMeasurementDto.identifier = unityMeasurement.identifier;
 			unityMeasurementDto_L.add(unityMeasurementDto);
 		}
 		return unityMeasurementDto_L;

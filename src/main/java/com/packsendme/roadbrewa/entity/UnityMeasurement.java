@@ -22,11 +22,13 @@ public class UnityMeasurement implements Serializable{
 	public String id;	
 	public String unitMeasurement;
 	public String region;
+	public String identifier;
 	
-	public UnityMeasurement(String unitMeasurement, String region) {
+	public UnityMeasurement(String unitMeasurement, String region, String identifier) {
 		super();
 		this.unitMeasurement = unitMeasurement;
 		this.region = region;
+		this.identifier = identifier;
 	}
 
 	public UnityMeasurement() {
