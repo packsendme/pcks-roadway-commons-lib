@@ -5,12 +5,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter 
 @Setter 
+@Document(collection = "pcks_roadbrewa_country")
 public class Country implements Serializable {
 	
 	/**
