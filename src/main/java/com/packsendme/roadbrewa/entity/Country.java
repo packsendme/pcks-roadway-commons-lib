@@ -1,8 +1,8 @@
 package com.packsendme.roadbrewa.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 
@@ -20,23 +20,25 @@ public class Country implements Serializable {
 	
 	@Id
 	public String id;
-	public String idcountry;
 	public String codcountry;
 	public String namecountry;
 	public String nameimagecountry;
-	public String formatnumbercountry;
-	public List<String> unityMeasurementL = new ArrayList<String>();
+	public String identifier;
+	public Map<String,String> unityWeightL = new HashMap<String,String>();
+	public Map<String,String> unityDistanceL = new HashMap<String,String>();
 	
-	public Country(String idcountry, String codcountry, String namecountry, String nameimagecountry,
-			String formatnumbercountry, List<String> unityMeasurementL) {
+ 	public Country(String codcountry, String namecountry, String nameimagecountry, String identifier,
+			Map<String, String> unityWeightL, Map<String, String> unityDistanceL) {
 		super();
-		this.idcountry = idcountry;
 		this.codcountry = codcountry;
 		this.namecountry = namecountry;
 		this.nameimagecountry = nameimagecountry;
-		this.formatnumbercountry = formatnumbercountry;
-		this.unityMeasurementL = unityMeasurementL;
+		this.identifier = identifier;
+		this.unityWeightL = unityWeightL;
+		this.unityDistanceL = unityDistanceL;
 	}
+
+
 
 
 
