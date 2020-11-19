@@ -70,7 +70,7 @@ public class UnityMeasurementDto implements Serializable{
 		return entity;
 	}
 	
-	public List<UnityMeasurementDto> entityTOdto(List<UnityMeasurement> unityMeasurement_L) {
+	public List<UnityMeasurementDto> entityTOdto_L(List<UnityMeasurement> unityMeasurement_L) {
 
 		List<UnityMeasurementDto> unityMeasurementDto_L = new ArrayList<UnityMeasurementDto>();
 		UnityMeasurementDto unityDto = null;
@@ -87,6 +87,18 @@ public class UnityMeasurementDto implements Serializable{
 			unityMeasurementDto_L.add(unityDto);
 		}
 		return unityMeasurementDto_L;
+	}
+	
+	public UnityMeasurementDto entityTOdto(UnityMeasurement entity) {
+		UnityMeasurementDto unityDto = new UnityMeasurementDto();  
+		unityDto.id = entity.id;
+		unityDto.typeUnity =  entity.typeUnity;
+		unityDto.unityArea = entity.unityArea;
+		unityDto.unityVolume = entity.unityVolume;
+		unityDto.unityWeight = entity.unityWeight;
+		unityDto.unityTemperature = entity.unityTemperature;
+		unityDto.unityCurrency = entity.unityCurrency;
+		return unityDto;
 	}
 	
  
