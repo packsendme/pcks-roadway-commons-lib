@@ -24,15 +24,17 @@ public class Location implements Serializable{
 	public String id;
 	public String codCountry;
 	public String countryName;
+	public String identifier;
 	public boolean citySpecify;
 	public List<String> cities = new ArrayList<String>();
 	
 
  
-	public Location(String codCountry, String countryName, boolean citySpecify, List<String> cities) {
+	public Location(String codCountry, String countryName, String identifier, boolean citySpecify, List<String> cities) {
 		super();
 		this.codCountry = codCountry;
 		this.countryName = countryName;
+		this.identifier = identifier;
 		this.citySpecify = citySpecify;
 		this.cities = cities;
 	}

@@ -25,16 +25,18 @@ public class LocationDto implements Serializable{
 	public String id;
 	public String codCountry;
 	public String countryName;
+	public String identifier;
 	public boolean citySpecify;
 	public List<String> cities = new ArrayList<String>(); 
 	
 	
 
 
-	public LocationDto(String codCountry, String countryName, boolean citySpecify, List<String> cities) {
+	public LocationDto(String codCountry, String countryName, String identifier, boolean citySpecify, List<String> cities) {
 		super();
 		this.codCountry = codCountry;
 		this.countryName = countryName;
+		this.identifier = identifier;
 		this.citySpecify = citySpecify;
 		this.cities = cities;
 	}
@@ -57,6 +59,7 @@ public class LocationDto implements Serializable{
 		}
 		entity.codCountry = locationDto.codCountry;
 		entity.countryName = locationDto.countryName;
+		entity.identifier = locationDto.identifier;
 		entity.citySpecify = locationDto.citySpecify;
 		entity.cities = new ArrayList<String>();
 		if(locationDto.citySpecify == true) {
@@ -76,6 +79,7 @@ public class LocationDto implements Serializable{
 			locationDto.id = l.id;
 			locationDto.codCountry = l.codCountry;
 			locationDto.countryName = l.countryName;
+			locationDto.identifier = l.identifier;
 			locationDto.citySpecify = l.citySpecify;
 			if(locationDto.citySpecify == true) {
 				for(String city : l.cities) {
