@@ -23,17 +23,23 @@ public class UnityMeasurementDto implements Serializable{
 
 	@Id
 	public String id;	
-	public String unitMeasurement;
-	public String region;
-	public String identifier;
+	public String typeUnity;
+	public String unityArea;
+	public String unityVolume;
+	public String unityWeight;
+	public String unityTemperature;
+	public String unityCurrency;
+		
 	
-	
-	
-	public UnityMeasurementDto(String unitMeasurement, String region, String identifier) {
+ 	public UnityMeasurementDto(String typeUnity, String unityArea, String unityVolume, String unityWeight,
+			String unityTemperature, String unityCurrency) {
 		super();
-		this.unitMeasurement = unitMeasurement;
-		this.region = region;
-		this.identifier = identifier;
+		this.typeUnity = typeUnity;
+		this.unityArea = unityArea;
+		this.unityVolume = unityVolume;
+		this.unityWeight = unityWeight;
+		this.unityTemperature = unityTemperature;
+		this.unityCurrency = unityCurrency;
 	}
 
 
@@ -55,24 +61,30 @@ public class UnityMeasurementDto implements Serializable{
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new UnityMeasurement();
 		}
-		entity.unitMeasurement = unityDto.unitMeasurement;
-		entity.region = unityDto.region;
-		entity.identifier = unityDto.identifier;
+		entity.typeUnity =  unityDto.typeUnity;
+		entity.unityArea = unityDto.unityArea;
+		entity.unityVolume = unityDto.unityVolume;
+		entity.unityWeight = unityDto.unityWeight;
+		entity.unityTemperature = unityDto.unityTemperature;
+		entity.unityCurrency = unityDto.unityCurrency;
 		return entity;
 	}
 	
 	public List<UnityMeasurementDto> entityTOdto(List<UnityMeasurement> unityMeasurement_L) {
 
 		List<UnityMeasurementDto> unityMeasurementDto_L = new ArrayList<UnityMeasurementDto>();
-		UnityMeasurementDto unityMeasurementDto = null;
+		UnityMeasurementDto unityDto = null;
 		
-		for(UnityMeasurement unityMeasurement :  unityMeasurement_L) {
-			unityMeasurementDto = new UnityMeasurementDto();  
-			unityMeasurementDto.id = unityMeasurement.id;
-			unityMeasurementDto.unitMeasurement = unityMeasurement.unitMeasurement;
-			unityMeasurementDto.region = unityMeasurement.region;
-			unityMeasurementDto.identifier = unityMeasurement.identifier;
-			unityMeasurementDto_L.add(unityMeasurementDto);
+		for(UnityMeasurement entity :  unityMeasurement_L) {
+			unityDto = new UnityMeasurementDto();  
+			unityDto.id = entity.id;
+			unityDto.typeUnity =  entity.typeUnity;
+			unityDto.unityArea = entity.unityArea;
+			unityDto.unityVolume = entity.unityVolume;
+			unityDto.unityWeight = entity.unityWeight;
+			unityDto.unityTemperature = entity.unityTemperature;
+			unityDto.unityCurrency = entity.unityCurrency;
+			unityMeasurementDto_L.add(unityDto);
 		}
 		return unityMeasurementDto_L;
 	}

@@ -20,16 +20,29 @@ public class UnityMeasurement implements Serializable{
 	
 	@Id
 	public String id;	
-	public String unitMeasurement;
-	public String region;
-	public String identifier;
+	public String typeUnity;
+	public String unityArea;
+	public String unityVolume;
+	public String unityWeight;
+	public String unityTemperature;
+	public String unityCurrency;
 	
-	public UnityMeasurement(String unitMeasurement, String region, String identifier) {
+	
+ 
+
+	public UnityMeasurement(String typeUnity, String unityArea, String unityVolume, String unityWeight,
+			String unityTemperature, String unityCurrency) {
 		super();
-		this.unitMeasurement = unitMeasurement;
-		this.region = region;
-		this.identifier = identifier;
+		this.typeUnity = typeUnity;
+		this.unityArea = unityArea;
+		this.unityVolume = unityVolume;
+		this.unityWeight = unityWeight;
+		this.unityTemperature = unityTemperature;
+		this.unityCurrency = unityCurrency;
 	}
+
+
+
 
 	public UnityMeasurement() {
 		super();
