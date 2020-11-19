@@ -1,6 +1,8 @@
 package com.packsendme.roadbrewa.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -21,17 +23,16 @@ public class UnityMeasurement implements Serializable{
 	@Id
 	public String id;	
 	public String typeUnity;
-	public String unityArea;
-	public String unityVolume;
-	public String unityWeight;
-	public String unityTemperature;
-	public String unityCurrency;
-	
+	public List<String> unityArea = new ArrayList<String>();
+	public List<String> unityVolume = new ArrayList<String>();
+	public List<String> unityWeight = new ArrayList<String>();
+	public List<String> unityTemperature = new ArrayList<String>();
+	public List<String> unityCurrency = new ArrayList<String>();
 	
  
 
-	public UnityMeasurement(String typeUnity, String unityArea, String unityVolume, String unityWeight,
-			String unityTemperature, String unityCurrency) {
+	public UnityMeasurement(String typeUnity, List<String> unityArea, List<String> unityVolume,
+			List<String> unityWeight, List<String> unityTemperature, List<String> unityCurrency) {
 		super();
 		this.typeUnity = typeUnity;
 		this.unityArea = unityArea;
@@ -40,7 +41,6 @@ public class UnityMeasurement implements Serializable{
 		this.unityTemperature = unityTemperature;
 		this.unityCurrency = unityCurrency;
 	}
-
 
 
 

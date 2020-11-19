@@ -24,17 +24,19 @@ public class UnityMeasurementDto implements Serializable{
 	@Id
 	public String id;	
 	public String typeUnity;
-	public String unityArea;
-	public String unityVolume;
-	public String unityWeight;
-	public String unityTemperature;
-	public String unityCurrency;
+	public List<String> unityArea = new ArrayList<String>();
+	public List<String> unityVolume = new ArrayList<String>();
+	public List<String> unityWeight = new ArrayList<String>();
+	public List<String> unityTemperature = new ArrayList<String>();
+	public List<String> unityCurrency = new ArrayList<String>();
 		
 	
- 	public UnityMeasurementDto(String typeUnity, String unityArea, String unityVolume, String unityWeight,
-			String unityTemperature, String unityCurrency) {
+ 	
+
+
+	public UnityMeasurementDto(List<String> unityArea, List<String> unityVolume, List<String> unityWeight,
+			List<String> unityTemperature, List<String> unityCurrency) {
 		super();
-		this.typeUnity = typeUnity;
 		this.unityArea = unityArea;
 		this.unityVolume = unityVolume;
 		this.unityWeight = unityWeight;
