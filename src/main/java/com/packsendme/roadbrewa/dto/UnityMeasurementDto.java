@@ -34,9 +34,10 @@ public class UnityMeasurementDto implements Serializable{
  	
 
 
-	public UnityMeasurementDto(List<String> unityArea, List<String> unityVolume, List<String> unityWeight,
+	public UnityMeasurementDto(String unityType, List<String> unityArea, List<String> unityVolume, List<String> unityWeight,
 			List<String> unityTemperature, List<String> unityCurrency) {
 		super();
+		this.unityType = unityType;
 		this.unityArea = unityArea;
 		this.unityVolume = unityVolume;
 		this.unityWeight = unityWeight;
@@ -63,7 +64,7 @@ public class UnityMeasurementDto implements Serializable{
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new UnityMeasurement();
 		}
-		entity.typeUnity =  unityDto.typeUnity;
+		entity.unityType =  unityDto.unityType;
 		entity.unityArea = unityDto.unityArea;
 		entity.unityVolume = unityDto.unityVolume;
 		entity.unityWeight = unityDto.unityWeight;
@@ -80,7 +81,7 @@ public class UnityMeasurementDto implements Serializable{
 		for(UnityMeasurement entity :  unityMeasurement_L) {
 			unityDto = new UnityMeasurementDto();  
 			unityDto.id = entity.id;
-			unityDto.typeUnity =  entity.typeUnity;
+			unityDto.unityType =  entity.unityType;
 			unityDto.unityArea = entity.unityArea;
 			unityDto.unityVolume = entity.unityVolume;
 			unityDto.unityWeight = entity.unityWeight;
@@ -94,7 +95,7 @@ public class UnityMeasurementDto implements Serializable{
 	public UnityMeasurementDto entityTOdto(UnityMeasurement entity) {
 		UnityMeasurementDto unityDto = new UnityMeasurementDto();  
 		unityDto.id = entity.id;
-		unityDto.typeUnity =  entity.typeUnity;
+		unityDto.unityType =  entity.unityType;
 		unityDto.unityArea = entity.unityArea;
 		unityDto.unityVolume = entity.unityVolume;
 		unityDto.unityWeight = entity.unityWeight;
