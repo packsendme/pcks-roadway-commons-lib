@@ -23,7 +23,7 @@ public class UnityMeasurementDto implements Serializable{
 
 	@Id
 	public String id;	
-	public String typeUnity;
+	public String unityType;
 	public List<String> unityArea = new ArrayList<String>();
 	public List<String> unityVolume = new ArrayList<String>();
 	public List<String> unityWeight = new ArrayList<String>();

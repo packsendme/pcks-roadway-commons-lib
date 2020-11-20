@@ -22,7 +22,7 @@ public class UnityMeasurement implements Serializable{
 	
 	@Id
 	public String id;	
-	public String typeUnity;
+	public String unityType;
 	public List<String> unityArea = new ArrayList<String>();
 	public List<String> unityVolume = new ArrayList<String>();
 	public List<String> unityWeight = new ArrayList<String>();
@@ -31,10 +31,10 @@ public class UnityMeasurement implements Serializable{
 	
  
 
-	public UnityMeasurement(String typeUnity, List<String> unityArea, List<String> unityVolume,
+	public UnityMeasurement(String unityType, List<String> unityArea, List<String> unityVolume,
 			List<String> unityWeight, List<String> unityTemperature, List<String> unityCurrency) {
 		super();
-		this.typeUnity = typeUnity;
+		this.unityType = unityType;
 		this.unityArea = unityArea;
 		this.unityVolume = unityVolume;
 		this.unityWeight = unityWeight;
