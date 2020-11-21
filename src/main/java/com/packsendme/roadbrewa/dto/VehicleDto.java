@@ -25,20 +25,20 @@ public class VehicleDto implements Serializable{
 	public Double cargo_max;
 	public Integer axis_total;
 	public String unity_measurement_weight;
-	public boolean people_transport;
+	public boolean transport_type;
 	public String people;
 	
 
 
 	public VehicleDto(String vehicle_type, List<String> bodywork_vehicle, Double cargo_max, Integer axis_total,
-			String unity_measurement_weight, boolean people_transport, String people) {
+			String unity_measurement_weight, boolean transport_type, String people) {
 		super();
 		this.vehicle_type = vehicle_type;
 		this.bodywork_vehicle = bodywork_vehicle;
 		this.cargo_max = cargo_max;
 		this.axis_total = axis_total;
 		this.unity_measurement_weight = unity_measurement_weight;
-		this.people_transport = people_transport;
+		this.transport_type = transport_type;
 		this.people = people;
 	}
 
@@ -62,7 +62,7 @@ public class VehicleDto implements Serializable{
 		entity.cargo_max = vehicle.cargo_max;
 		entity.axis_total = vehicle.axis_total;
 		entity.unity_measurement_weight = vehicle.unity_measurement_weight;
-		entity.people_transport = vehicle.people_transport; 
+		entity.transport_type = vehicle.transport_type; 
 		entity.people = vehicle.people;
 		return entity;
 	}
@@ -81,7 +81,7 @@ public class VehicleDto implements Serializable{
 			vehicleDto.cargo_max = vehicle.cargo_max;
 			vehicleDto.axis_total = vehicle.axis_total;
 			vehicleDto.unity_measurement_weight = vehicle.unity_measurement_weight;
-			vehicleDto.people_transport = vehicle.people_transport; 
+			vehicleDto.transport_type = vehicle.transport_type; 
 			vehicleDto.people = vehicle.people;
 			vehicleDto_L.add(vehicleDto);
 		}
