@@ -25,13 +25,13 @@ public class VehicleDto implements Serializable{
 	public Double cargo_max;
 	public Integer axis_total;
 	public String unity_measurement_weight;
-	public boolean transport_type;
+	public String transport_type;
 	public String people;
 	
 
 
 	public VehicleDto(String vehicle_type, List<String> bodywork_vehicle, Double cargo_max, Integer axis_total,
-			String unity_measurement_weight, boolean transport_type, String people) {
+			String unity_measurement_weight, String transport_type, String people) {
 		super();
 		this.vehicle_type = vehicle_type;
 		this.bodywork_vehicle = bodywork_vehicle;
