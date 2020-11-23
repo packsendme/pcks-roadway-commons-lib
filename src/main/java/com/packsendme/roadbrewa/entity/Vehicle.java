@@ -2,6 +2,7 @@ package com.packsendme.roadbrewa.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +28,7 @@ public class Vehicle implements Serializable{
 	public List<String> bodywork_vehicle = new ArrayList<String>();
 	public Double weight_max;
 	public Integer axis_total;
-	public Map<Integer, String> unity_weight;
+	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public String transport_type;
 	public String people;
 	
