@@ -3,6 +3,7 @@ package com.packsendme.roadbrewa.entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -24,20 +25,20 @@ public class Vehicle implements Serializable{
 	public String id;
 	public String vehicle_type;
 	public List<String> bodywork_vehicle = new ArrayList<String>();
-	public Double cargo_max;
+	public Double weight_max;
 	public Integer axis_total;
-	public String unity_measurement_weight;
+	public Map<Integer, String> unity_weight;
 	public String transport_type;
 	public String people;
 	
-	public Vehicle(String vehicle_type, List<String> bodywork_vehicle, Double cargo_max, Integer axis_total,
-			String unity_measurement_weight, String transport_type, String people) {
+	public Vehicle(String vehicle_type, List<String> bodywork_vehicle, Double weight_max, Integer axis_total,
+			Map<Integer, String> unity_weight, String transport_type, String people) {
 		super();
 		this.vehicle_type = vehicle_type;
 		this.bodywork_vehicle = bodywork_vehicle;
-		this.cargo_max = cargo_max;
+		this.weight_max = weight_max;
 		this.axis_total = axis_total;
-		this.unity_measurement_weight = unity_measurement_weight;
+		this.unity_weight = unity_weight;
 		this.transport_type = transport_type;
 		this.people = people;
 	}

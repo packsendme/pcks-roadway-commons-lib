@@ -2,7 +2,9 @@ package com.packsendme.roadbrewa.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.packsendme.roadbrewa.component.RoadwayManagerConstants;
 import com.packsendme.roadbrewa.entity.Category;
@@ -23,26 +25,21 @@ public class CategoryDto implements Serializable{
 	public String id;
 	public String name_category;
 	public String transport;
-	public Double weight_min;
 	public Double weight_max;
-	public String unity_measurement_weight_min;
-	public String unity_measurement_weight_max;
+	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public List<VehicleDto> vehicles = new ArrayList<VehicleDto>(); 
 
 
-
-	public CategoryDto(String id, String name_category, String transport, Double weight_min, Double weight_max,
-			String unity_measurement_weight_min, String unity_measurement_weight_max, List<VehicleDto> vehicles) {
+	public CategoryDto(String name_category, String transport, Double weight_max, Map<Integer, String> unity_weight,
+			List<VehicleDto> vehicles) {
 		super();
-		this.id = id;
 		this.name_category = name_category;
 		this.transport = transport;
-		this.weight_min = weight_min;
 		this.weight_max = weight_max;
-		this.unity_measurement_weight_min = unity_measurement_weight_min;
-		this.unity_measurement_weight_max = unity_measurement_weight_max;
+		this.unity_weight = unity_weight;
 		this.vehicles = vehicles;
 	}
+
 
 	public CategoryDto() {
 		super();
@@ -64,16 +61,14 @@ public class CategoryDto implements Serializable{
 			categoryDTO.id = categoryEntity.id;
 			categoryDTO.name_category = categoryEntity.name_category;
 			categoryDTO.transport = categoryEntity.transport;
-			categoryDTO.weight_min = categoryEntity.weight_min;
 			categoryDTO.weight_max = categoryEntity.weight_max;
-			categoryDTO.unity_measurement_weight_min = categoryEntity.unity_measurement_weight_min;
-			categoryDTO.unity_measurement_weight_max = categoryEntity.unity_measurement_weight_max;
+			categoryDTO.unity_weight = categoryEntity.unity_weight;
  
 			// Category-Vehicle
 			List<VehicleDto> vehiclesDTO_L = new ArrayList<VehicleDto>();
 			if(categoryEntity.vehicles.size() >= 1) {
 				for(Vehicle v : categoryEntity.vehicles) {
-					VehicleDto vehicleDto = new VehicleDto(v.vehicle_type, v.bodywork_vehicle, v.cargo_max, v.axis_total, v.unity_measurement_weight, v.transport_type, v.people);
+					VehicleDto vehicleDto = new VehicleDto(v.vehicle_type, v.bodywork_vehicle, v.weight_max, v.axis_total, v.unity_weight, v.transport_type, v.people);
 					vehiclesDTO_L.add(vehicleDto);
 					vehicleDto = null;
 				}
@@ -93,17 +88,15 @@ public class CategoryDto implements Serializable{
 		// Category-Head
 		category.name_category = categoryDto.name_category;
 		category.transport = categoryDto.transport;
-		category.weight_min = categoryDto.weight_min;
 		category.weight_max = categoryDto.weight_max;
-		category.unity_measurement_weight_min = categoryDto.unity_measurement_weight_min;
-		category.unity_measurement_weight_max = categoryDto.unity_measurement_weight_max;
+		category.unity_weight = categoryDto.unity_weight;
 
 		// Category-Vehicle
 		List<Vehicle> vehicleL = new ArrayList<Vehicle>();
 		Vehicle vehicle = null;
 		if(categoryDto.vehicles.size() >= 1) {
 			for(VehicleDto v : categoryDto.vehicles) {
-				vehicle = new Vehicle(v.vehicle_type, v.bodywork_vehicle, v.cargo_max, v.axis_total, v.unity_measurement_weight, v.transport_type, v.people);
+				vehicle = new Vehicle(v.vehicle_type, v.bodywork_vehicle, v.weight_max, v.axis_total, v.unity_weight, v.transport_type, v.people);
 				vehicleL.add(vehicle);
 				vehicle = null;
 			}
