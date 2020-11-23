@@ -2,7 +2,9 @@ package com.packsendme.roadbrewa.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -25,14 +27,14 @@ public class UnityMeasurement implements Serializable{
 	public String unityType;
 	public List<String> unityArea = new ArrayList<String>();
 	public List<String> unityVolume = new ArrayList<String>();
-	public List<String> unityWeight = new ArrayList<String>();
+	public Map<Integer, String> unityWeight = new HashMap<Integer, String>();
 	public List<String> unityTemperature = new ArrayList<String>();
 	public List<String> unityCurrency = new ArrayList<String>();
 	
  
 
 	public UnityMeasurement(String unityType, List<String> unityArea, List<String> unityVolume,
-			List<String> unityWeight, List<String> unityTemperature, List<String> unityCurrency) {
+			Map<Integer, String> unityWeight, List<String> unityTemperature, List<String> unityCurrency) {
 		super();
 		this.unityType = unityType;
 		this.unityArea = unityArea;
