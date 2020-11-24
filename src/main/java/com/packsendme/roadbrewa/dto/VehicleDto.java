@@ -26,13 +26,13 @@ public class VehicleDto implements Serializable{
 	public List<String> bodywork_vehicle = new ArrayList<String>();
 	public Double weight_max;
 	public Integer axis_total;
+	public Integer people_max;
 	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public String transport_type;
-	public String people;
 	
 
 	public VehicleDto(String vehicle_type, List<String> bodywork_vehicle, Double weight_max, Integer axis_total,
-			Map<Integer, String> unity_weight, String transport_type, String people) {
+			Map<Integer, String> unity_weight, String transport_type, Integer people_max) {
 		super();
 		this.vehicle_type = vehicle_type;
 		this.bodywork_vehicle = bodywork_vehicle;
@@ -40,7 +40,7 @@ public class VehicleDto implements Serializable{
 		this.axis_total = axis_total;
 		this.unity_weight = unity_weight;
 		this.transport_type = transport_type;
-		this.people = people;
+		this.people_max = people_max;
 	}
 
 
@@ -65,7 +65,7 @@ public class VehicleDto implements Serializable{
 		entity.axis_total = vehicle.axis_total;
 		entity.unity_weight = vehicle.unity_weight;
 		entity.transport_type = vehicle.transport_type; 
-		entity.people = vehicle.people;
+		entity.people_max = people_max;
 		return entity;
 	}
 	
@@ -84,7 +84,7 @@ public class VehicleDto implements Serializable{
 			vehicleDto.axis_total = vehicle.axis_total;
 			vehicleDto.unity_weight = vehicle.unity_weight;
 			vehicleDto.transport_type = vehicle.transport_type; 
-			vehicleDto.people = vehicle.people;
+			vehicleDto.people_max = vehicle.people_max;
 			vehicleDto_L.add(vehicleDto);
 		}
 		return vehicleDto_L;

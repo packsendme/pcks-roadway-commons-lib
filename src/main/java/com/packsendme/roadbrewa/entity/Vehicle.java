@@ -28,12 +28,12 @@ public class Vehicle implements Serializable{
 	public List<String> bodywork_vehicle = new ArrayList<String>();
 	public Double weight_max;
 	public Integer axis_total;
+	public Integer people_max;
 	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public String transport_type;
-	public String people;
 	
 	public Vehicle(String vehicle_type, List<String> bodywork_vehicle, Double weight_max, Integer axis_total,
-			Map<Integer, String> unity_weight, String transport_type, String people) {
+			Map<Integer, String> unity_weight, String transport_type, Integer people_max) {
 		super();
 		this.vehicle_type = vehicle_type;
 		this.bodywork_vehicle = bodywork_vehicle;
@@ -41,7 +41,7 @@ public class Vehicle implements Serializable{
 		this.axis_total = axis_total;
 		this.unity_weight = unity_weight;
 		this.transport_type = transport_type;
-		this.people = people;
+		this.people_max = people_max;
 	}
 
 	public Vehicle() {
