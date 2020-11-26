@@ -65,7 +65,7 @@ public class VehicleDto implements Serializable{
 		entity.axis_total = vehicle.axis_total;
 		entity.unity_weight = vehicle.unity_weight;
 		entity.transport_type = vehicle.transport_type; 
-		entity.people_max = people_max;
+		entity.people_max = vehicle.people_max;
 		return entity;
 	}
 	
