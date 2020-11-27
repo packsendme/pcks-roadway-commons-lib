@@ -2,6 +2,7 @@ package com.packsendme.roadbrewa.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,10 +30,12 @@ public class CategoryDto implements Serializable{
 	public Integer people_max;
 	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public List<VehicleDto> vehicles = new ArrayList<VehicleDto>(); 
+	public Date dt_inc;
+	public Date dt_update;
 
 
 	public CategoryDto(String name_category, String transport, Double weight_max, Integer people_max, 
-			Map<Integer, String> unity_weight, List<VehicleDto> vehicles) {
+			Map<Integer, String> unity_weight, List<VehicleDto> vehicles, Date dt_inc, Date dt_update) {
 		super();
 		this.name_category = name_category;
 		this.transport = transport;
@@ -40,6 +43,8 @@ public class CategoryDto implements Serializable{
 		this.people_max = people_max;
 		this.unity_weight = unity_weight;
 		this.vehicles = vehicles;
+		this.dt_inc = dt_inc;
+		this.dt_update = dt_update;
 	}
 
 
@@ -66,7 +71,9 @@ public class CategoryDto implements Serializable{
 			categoryDTO.weight_max = categoryEntity.weight_max;
 			categoryDTO.people_max = categoryEntity.people_max;
 			categoryDTO.unity_weight = categoryEntity.unity_weight;
- 
+			categoryDTO.dt_inc = categoryEntity.dt_inc;
+			categoryDTO.dt_update = categoryEntity.dt_update;
+			
 			// Category-Vehicle
 			List<VehicleDto> vehiclesDTO_L = new ArrayList<VehicleDto>();
 			if(categoryEntity.vehicles.size() >= 1) {
@@ -94,7 +101,9 @@ public class CategoryDto implements Serializable{
 		category.weight_max = categoryDto.weight_max;
 		category.people_max = categoryDto.people_max;
 		category.unity_weight = categoryDto.unity_weight;
-
+		category.dt_inc = categoryDto.dt_inc;
+		category.dt_update = categoryDto.dt_update;
+		
 		// Category-Vehicle
 		List<Vehicle> vehicleL = new ArrayList<Vehicle>();
 		Vehicle vehicle = null;
