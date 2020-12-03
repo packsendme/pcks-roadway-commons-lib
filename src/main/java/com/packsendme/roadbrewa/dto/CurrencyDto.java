@@ -47,6 +47,7 @@ public class CurrencyDto implements Serializable {
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new Currency();
 		}
+		entity.id = currencyDto.id;
 		entity.name = currencyDto.name;
 		entity.symbol = currencyDto.symbol;
 		entity.country = currencyDto.country;
@@ -58,6 +59,7 @@ public class CurrencyDto implements Serializable {
 
 		for(Currency entity : currency_L) {
 			CurrencyDto currencyDto = new CurrencyDto();
+			currencyDto.id = entity.id;
 			currencyDto.name = entity.name;
 			currencyDto.symbol = entity.symbol;
 			currencyDto.country = entity.country;
