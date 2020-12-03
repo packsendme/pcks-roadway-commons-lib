@@ -22,11 +22,11 @@ public class CurrencyDto implements Serializable {
 	public String id;
 	public String name;
 	public String symbol;
-	public List<CountryDto> country = new ArrayList<CountryDto>();
+	public List<String> country = new ArrayList<String>();
 
 
 
-	public CurrencyDto(String name, String symbol, List<CountryDto> country) {
+	public CurrencyDto(String name, String symbol, List<String> country) {
 		super();
 		this.name = name;
 		this.symbol = symbol;
