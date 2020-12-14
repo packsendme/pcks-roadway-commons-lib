@@ -123,8 +123,8 @@ public class RoadwayDto implements Serializable{
 						costs.distance_cost = costsDto.distance_cost;
 						costs.worktime_cost = costsDto.worktime_cost;
 						costs.average_consumption_cost = costsDto.average_consumption_cost;
-						costs.rate_exchange = costsDto.rate_exchange;
-						costs.current_exchange = costsDto.current_exchange;
+						costs.currency_symbol = costsDto.currency_symbol;
+						costs.currency = costsDto.currency;
 						costs.statusChange = costsDto.statusChange;
 						costs_L.add(costs);
 					}
@@ -184,8 +184,8 @@ public class RoadwayDto implements Serializable{
 						costsDto.distance_cost = costs.distance_cost;
 						costsDto.worktime_cost = costs.worktime_cost;
 						costsDto.average_consumption_cost = costs.average_consumption_cost;
-						costsDto.rate_exchange = costs.rate_exchange;
-						costsDto.current_exchange = costs.current_exchange;
+						costsDto.currency_symbol = costs.currency_symbol;
+						costsDto.currency = costs.currency;
 						costsDto.statusChange = costs.statusChange;
 						costsDto_L.add(costsDto);
 					}
