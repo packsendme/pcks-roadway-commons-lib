@@ -23,6 +23,7 @@ public class Location implements Serializable{
 	@Id
 	public String id;
 	public String codCountry;
+	public String countryShortName;
 	public String countryName;
 	public String identifier;
 	public boolean citySpecify;
@@ -30,9 +31,10 @@ public class Location implements Serializable{
 	
 
  
-	public Location(String codCountry, String countryName, String identifier, boolean citySpecify, List<String> cities) {
+	public Location(String codCountry, String countryName, String countryShortName, String identifier, boolean citySpecify, List<String> cities) {
 		super();
 		this.codCountry = codCountry;
+		this.countryShortName = countryShortName;
 		this.countryName = countryName;
 		this.identifier = identifier;
 		this.citySpecify = citySpecify;
