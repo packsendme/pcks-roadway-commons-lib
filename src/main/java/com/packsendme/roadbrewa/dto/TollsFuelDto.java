@@ -65,7 +65,7 @@ public class TollsFuelDto implements Serializable {
 		tollsFuel.fuelDiesel_price = tollsfuelDto.fuelDiesel_price;
 		tollsFuel.current = tollsfuelDto.current;
 		tollsFuel.date_creation = tollsfuelDto.date_creation;
-		tollsFuel.date_change = null;
+		tollsFuel.date_change = tollsfuelDto.date_change;
 		return tollsFuel;
 	}
 	
