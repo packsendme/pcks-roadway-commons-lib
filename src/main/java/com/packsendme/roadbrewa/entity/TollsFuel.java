@@ -17,8 +17,6 @@ public class TollsFuel implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	public String id;
 	public String country;
 	public Double tolls_price;
 	public Double fuelGasoline_price;

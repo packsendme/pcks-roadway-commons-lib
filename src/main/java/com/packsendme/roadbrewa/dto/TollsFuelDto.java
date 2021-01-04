@@ -19,7 +19,6 @@ public class TollsFuelDto implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public String id;
 	public String country;
 	public Double tolls_price;
 	public Double fuelGasoline_price;
@@ -52,7 +51,6 @@ public class TollsFuelDto implements Serializable {
 		}
 		else if(operationType.equals(RoadwayManagerConstants.UPDATE_OP_ROADWAY)) {
 			tollsFuel = new TollsFuel();
-			tollsFuel.id = tollsfuelDto.id;
 		}
 		
 		tollsFuel.country = tollsfuelDto.country;
