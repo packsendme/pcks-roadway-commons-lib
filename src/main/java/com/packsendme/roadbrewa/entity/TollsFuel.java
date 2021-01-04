@@ -22,4 +22,8 @@ public class TollsFuel implements Serializable {
 	public Double fuelGasoline_price;
 	public Double fuelDiesel_price;
 	public String current;
+	public String date_creation;
+	public String date_change;
+
+	
 }

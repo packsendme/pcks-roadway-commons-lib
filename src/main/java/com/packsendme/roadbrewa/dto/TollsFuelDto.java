@@ -24,15 +24,21 @@ public class TollsFuelDto implements Serializable {
 	public Double fuelGasoline_price;
 	public Double fuelDiesel_price;
 	public String current;
+	public String date_creation;
+	public String date_change;
+
 	
 	public TollsFuelDto(String country, Double tolls_price, Double fuelGasoline_price, Double fuelDiesel_price,
-			String current) {
+			String current, String date_creation, String date_change) {
 		super();
 		this.country = country;
 		this.tolls_price = tolls_price;
 		this.fuelGasoline_price = fuelGasoline_price;
 		this.fuelDiesel_price = fuelDiesel_price;
 		this.current = current;
+		this.date_creation = date_creation;
+		this.date_change = date_change;
+
 	}
 
 	public TollsFuelDto() {
@@ -58,6 +64,8 @@ public class TollsFuelDto implements Serializable {
 		tollsFuel.fuelGasoline_price = tollsfuelDto.fuelGasoline_price;
 		tollsFuel.fuelDiesel_price = tollsfuelDto.fuelDiesel_price;
 		tollsFuel.current = tollsfuelDto.current;
+		tollsFuel.date_creation = tollsfuelDto.date_creation;
+		tollsFuel.date_change = null;
 		return tollsFuel;
 	}
 	
@@ -68,6 +76,8 @@ public class TollsFuelDto implements Serializable {
 		tollsFuel_Dto.fuelGasoline_price = entity.fuelGasoline_price;
 		tollsFuel_Dto.fuelDiesel_price = entity.fuelDiesel_price;
 		tollsFuel_Dto.current = entity.current;
+		tollsFuel_Dto.date_creation = entity.date_creation;
+		tollsFuel_Dto.date_change = entity.date_change;
 		return tollsFuel_Dto;
 	}
 
