@@ -22,6 +22,7 @@ public class VehicleDto implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	public String id;
+	public String vehicle_name;
 	public String vehicle_type;
 	public List<String> bodywork_vehicle = new ArrayList<String>();
 	public Double weight_max;
@@ -31,7 +32,7 @@ public class VehicleDto implements Serializable{
 	public String transport_type;
 	
 
-	public VehicleDto(String vehicle_type, List<String> bodywork_vehicle, Double weight_max, Integer axis_total,
+	public VehicleDto(String vehicle_name, String vehicle_type, List<String> bodywork_vehicle, Double weight_max, Integer axis_total,
 			Map<Integer, String> unity_weight, String transport_type, Integer people_max) {
 		super();
 		this.vehicle_type = vehicle_type;
@@ -59,6 +60,7 @@ public class VehicleDto implements Serializable{
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new Vehicle();
 		}
+		entity.vehicle_name = vehicle.vehicle_name;
 		entity.vehicle_type = vehicle.vehicle_type;
 		entity.bodywork_vehicle = vehicle.bodywork_vehicle;
 		entity.weight_max = vehicle.weight_max;
@@ -78,6 +80,7 @@ public class VehicleDto implements Serializable{
 		for(Vehicle vehicle : vehicle_L) {
 			vehicleDto = new VehicleDto();
 			vehicleDto.id = vehicle.id;
+			vehicleDto.vehicle_name = vehicle.vehicle_name;
 			vehicleDto.vehicle_type = vehicle.vehicle_type;
 			vehicleDto.bodywork_vehicle = vehicle.bodywork_vehicle;
 			vehicleDto.weight_max = vehicle.weight_max;
