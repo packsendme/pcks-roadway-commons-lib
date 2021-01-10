@@ -24,7 +24,7 @@ public class VehicleDto implements Serializable{
 	public String id;
 	public String vehicle_name;
 	public String vehicle_type;
-	public List<String> bodywork_vehicle = new ArrayList<String>();
+	public String bodywork_vehicle;
 	public Double weight_max;
 	public Integer axis_total;
 	public Integer people_max;
@@ -32,7 +32,7 @@ public class VehicleDto implements Serializable{
 	public String transport_type;
 	
 
-	public VehicleDto(String vehicle_name, String vehicle_type, List<String> bodywork_vehicle, Double weight_max, Integer axis_total,
+	public VehicleDto(String vehicle_name, String vehicle_type, String bodywork_vehicle, Double weight_max, Integer axis_total,
 			Map<Integer, String> unity_weight, String transport_type, Integer people_max) {
 		super();
 		this.vehicle_type = vehicle_type;

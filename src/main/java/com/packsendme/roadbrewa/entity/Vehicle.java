@@ -1,9 +1,7 @@
 package com.packsendme.roadbrewa.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.data.annotation.Id;
@@ -26,14 +24,14 @@ public class Vehicle implements Serializable{
 	public String id;
 	public String vehicle_name;
 	public String vehicle_type;
-	public List<String> bodywork_vehicle = new ArrayList<String>();
+	public String bodywork_vehicle;
 	public Double weight_max;
 	public Integer axis_total;
 	public Integer people_max;
 	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public String transport_type;
 	
-	public Vehicle(String vehicle_name, String vehicle_type, List<String> bodywork_vehicle, Double weight_max, Integer axis_total,
+	public Vehicle(String vehicle_name, String vehicle_type, String bodywork_vehicle, Double weight_max, Integer axis_total,
 			Map<Integer, String> unity_weight, String transport_type, Integer people_max) {
 		super();
 		this.vehicle_name = vehicle_name;
