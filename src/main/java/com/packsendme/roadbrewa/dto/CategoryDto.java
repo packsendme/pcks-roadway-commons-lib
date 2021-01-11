@@ -79,6 +79,12 @@ public class CategoryDto implements Serializable{
 			if(categoryEntity.vehicles.size() >= 1) {
 				for(Vehicle v : categoryEntity.vehicles) {
 					VehicleDto vehicleDto = new VehicleDto(v.vehicle_name, v.vehicle_type, v.bodywork_vehicle, v.weight_max, v.axis_total, v.unity_weight, v.transport_type, v.people_max);
+					
+					System.out.println(" ");
+					System.out.println(" ===================== ");
+					System.out.println(" VEHICLE_NAME "+ v.vehicle_name);
+					System.out.println(" ===================== ");
+					
 					vehiclesDTO_L.add(vehicleDto);
 					vehicleDto = null;
 				}
