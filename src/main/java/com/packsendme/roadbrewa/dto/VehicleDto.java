@@ -35,6 +35,7 @@ public class VehicleDto implements Serializable{
 	public VehicleDto(String vehicle_name, String vehicle_type, String bodywork_vehicle, Double weight_max, Integer axis_total,
 			Map<Integer, String> unity_weight, String transport_type, Integer people_max) {
 		super();
+		this.vehicle_name = vehicle_name;
 		this.vehicle_type = vehicle_type;
 		this.bodywork_vehicle = bodywork_vehicle;
 		this.weight_max = weight_max;
