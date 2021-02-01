@@ -38,7 +38,7 @@ public class VehicleTypeDto implements Serializable{
 
 	
 	/* ==============================================
-	 *  V E H I C L E - TYPE  - P A R S E R  
+	 *  V E H I C L E CATEGORY - TYPE  - P A R S E R  
 	 * ==============================================
 	 */
 
