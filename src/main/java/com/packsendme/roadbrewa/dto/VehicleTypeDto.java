@@ -20,7 +20,9 @@ public class VehicleTypeDto implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	public String id;
+	public String name_category;
 	public String type_vehicle;
+	
 
 	
 	
@@ -57,6 +59,7 @@ public class VehicleTypeDto implements Serializable{
 		for(VehicleType vehicleType : vehicleType_L) {
 			vehicleTypeDto = new VehicleTypeDto();
 			vehicleTypeDto.id = vehicleType.id;
+			vehicleTypeDto.name_category = vehicleType.name_category;
 			vehicleTypeDto.type_vehicle = vehicleType.type_vehicle;
 			vehicleTypeDto_L.add(vehicleTypeDto);
 		}

@@ -20,6 +20,7 @@ public class VehicleType implements Serializable{
 	
 	@Id
 	public String id;	
+	public String name_category;
 	public String type_vehicle;
 	 
 	public VehicleType(String type_vehicle) {

@@ -29,6 +29,7 @@ public class Roadway implements Serializable {
 	public String blocked_id;
 	public String date_creation;
 	public String date_change;
+	public Boolean antt;
 	public List<Category> categories = new ArrayList<Category>();
 	public Map<String, List<Costs>> costs = new HashMap<String, List<Costs>>(); 
 	public List<Location> locations = new ArrayList<Location>();
