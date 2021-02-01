@@ -24,13 +24,12 @@ public class VehicleTypeDto implements Serializable{
 	public String type_vehicle;
 	
 
-	
-	
-	public VehicleTypeDto(String type_vehicle) {
+	public VehicleTypeDto(String name_category, String type_vehicle) {
 		super();
+		this.name_category = name_category;
 		this.type_vehicle = type_vehicle;
 	}
-	
+
 
 	public VehicleTypeDto() {
 		super();

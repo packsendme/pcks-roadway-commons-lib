@@ -23,8 +23,9 @@ public class VehicleType implements Serializable{
 	public String name_category;
 	public String type_vehicle;
 	 
-	public VehicleType(String type_vehicle) {
+	public VehicleType(String name_category, String type_vehicle) {
 		super();
+		this.name_category = name_category;
 		this.type_vehicle = type_vehicle;
 	}
 
