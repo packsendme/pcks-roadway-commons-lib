@@ -47,6 +47,7 @@ public class VehicleTypeDto implements Serializable{
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new VehicleType();
 		}
+		entity.name_category = vehicleTypeDto.name_category;
 		entity.type_vehicle = vehicleTypeDto.type_vehicle;
 		return entity;
 	}
