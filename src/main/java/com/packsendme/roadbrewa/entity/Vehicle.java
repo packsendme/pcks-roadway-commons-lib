@@ -24,6 +24,7 @@ public class Vehicle implements Serializable{
 	public String id;
 	public String vehicle_name;
 	public String vehicle_type;
+	public String vehicle_style;
 	public String bodywork_vehicle;
 	public Double weight_max;
 	public Integer axis_total;
@@ -31,11 +32,12 @@ public class Vehicle implements Serializable{
 	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public String transport_type;
 	
-	public Vehicle(String vehicle_name, String vehicle_type, String bodywork_vehicle, Double weight_max, Integer axis_total,
+	public Vehicle(String vehicle_name, String vehicle_type, String vehicle_style, String bodywork_vehicle, Double weight_max, Integer axis_total,
 			Map<Integer, String> unity_weight, String transport_type, Integer people_max) {
 		super();
 		this.vehicle_name = vehicle_name;
 		this.vehicle_type = vehicle_type;
+		this.vehicle_style = vehicle_style;
 		this.bodywork_vehicle = bodywork_vehicle;
 		this.weight_max = weight_max;
 		this.axis_total = axis_total;
