@@ -27,8 +27,9 @@ public class VehicleCategoryDto implements Serializable{
 
 
 	
-	public VehicleCategoryDto(String type_vehicle, List<String> category_vehicle, List<String> subcategory_vehicle) {
+	public VehicleCategoryDto(String id, String type_vehicle, List<String> category_vehicle, List<String> subcategory_vehicle) {
 		super();
+		this.id = id;
 		this.type_vehicle = type_vehicle;
 		this.category_vehicle = category_vehicle;
 		this.subcategory_vehicle = subcategory_vehicle;
@@ -47,13 +48,13 @@ public class VehicleCategoryDto implements Serializable{
 	 */
 
 
-	public VehicleCategory dtoTOentity(VehicleCategoryDto vehicleTypeDto, VehicleCategory entity, String typeOperation) {
+	public VehicleCategory dtoTOentity(VehicleCategoryDto vehicleCategoryDto, VehicleCategory entity, String typeOperation) {
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new VehicleCategory();
 		}
-		entity.type_vehicle = vehicleTypeDto.type_vehicle;
-		entity.category_vehicle = vehicleTypeDto.category_vehicle;
-		entity.subcategory_vehicle = vehicleTypeDto.subcategory_vehicle;
+		entity.type_vehicle = vehicleCategoryDto.type_vehicle;
+		entity.category_vehicle = vehicleCategoryDto.category_vehicle;
+		entity.subcategory_vehicle = vehicleCategoryDto.subcategory_vehicle;
 		return entity;
 	}
 	
@@ -71,4 +72,11 @@ public class VehicleCategoryDto implements Serializable{
 		}
 		return vehicleTypeDto_L;
 	}
+	
+	
+	public VehicleCategoryDto entityTOdtoObj(VehicleCategory vehicle) {
+		VehicleCategoryDto vehicleTypeDto = new VehicleCategoryDto(vehicle.id, vehicle.type_vehicle, vehicle.category_vehicle, vehicle.subcategory_vehicle);
+		return vehicleTypeDto;
+	}
+
 }
