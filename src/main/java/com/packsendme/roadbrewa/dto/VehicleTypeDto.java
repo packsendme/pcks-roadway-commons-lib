@@ -21,17 +21,12 @@ public class VehicleTypeDto implements Serializable{
 
 	public String id;
 	public String type_vehicle;
-	public String model_vehicle;
-	public List<String> category_vehicle = new ArrayList<String>();
-	public List<String> subcategory_vehicle = new ArrayList<String>();
-
-
 	
-	public VehicleTypeDto(String type_vehicle, List<String> category_vehicle, List<String> subcategory_vehicle) {
+
+
+	public VehicleTypeDto(String type_vehicle) {
 		super();
 		this.type_vehicle = type_vehicle;
-		this.category_vehicle = category_vehicle;
-		this.subcategory_vehicle = subcategory_vehicle;
 	}
 
 
@@ -42,7 +37,7 @@ public class VehicleTypeDto implements Serializable{
 
 	
 	/* ==============================================
-	 *  V E H I C L E CATEGORY - TYPE  - P A R S E R  
+	 *  V E H I C L E -  TYPE  - P A R S E R  
 	 * ==============================================
 	 */
 
@@ -52,8 +47,6 @@ public class VehicleTypeDto implements Serializable{
 			entity = new VehicleType();
 		}
 		entity.type_vehicle = vehicleTypeDto.type_vehicle;
-		entity.category_vehicle = vehicleTypeDto.category_vehicle;
-		entity.subcategory_vehicle = vehicleTypeDto.subcategory_vehicle;
 		return entity;
 	}
 	
@@ -65,8 +58,6 @@ public class VehicleTypeDto implements Serializable{
 			vehicleTypeDto = new VehicleTypeDto();
 			vehicleTypeDto.id = vehicleType.id;
 			vehicleTypeDto.type_vehicle = vehicleType.type_vehicle;
-			vehicleTypeDto.category_vehicle = vehicleType.category_vehicle;
-			vehicleTypeDto.subcategory_vehicle = vehicleType.subcategory_vehicle;
 			vehicleTypeDto_L.add(vehicleTypeDto);
 		}
 		return vehicleTypeDto_L;

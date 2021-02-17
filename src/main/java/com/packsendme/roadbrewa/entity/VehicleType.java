@@ -1,8 +1,6 @@
 package com.packsendme.roadbrewa.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -23,16 +21,15 @@ public class VehicleType implements Serializable{
 	@Id
 	public String id;	
 	public String type_vehicle;
-	public List<String> category_vehicle = new ArrayList<String>();
-	public List<String> subcategory_vehicle = new ArrayList<String>();
+
 	
-	public VehicleType(String type_vehicle, List<String> category_vehicle, List<String> subcategory_vehicle) {
+	
+	public VehicleType(String type_vehicle) {
 		super();
 		this.type_vehicle = type_vehicle;
-		this.category_vehicle = category_vehicle;
-		this.subcategory_vehicle = subcategory_vehicle;
-		
 	}
+
+
 
 	public VehicleType() {
 		super();
