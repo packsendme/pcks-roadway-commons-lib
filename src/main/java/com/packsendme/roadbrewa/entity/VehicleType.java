@@ -23,16 +23,14 @@ public class VehicleType implements Serializable{
 	@Id
 	public String id;	
 	public String type_vehicle;
-	public String vehicle_model;
-	public String vehicle_category;
-	public List<String> vehicle_subcategory = new ArrayList<String>();
+	public List<String> category_vehicle = new ArrayList<String>();
+	public List<String> subcategory_vehicle = new ArrayList<String>();
 	
-	public VehicleType(String type_vehicle, String vehicle_model, String vehicle_category, List<String> vehicle_subcategory) {
+	public VehicleType(String type_vehicle, List<String> category_vehicle, List<String> subcategory_vehicle) {
 		super();
 		this.type_vehicle = type_vehicle;
-		this.vehicle_model = vehicle_model;
-		this.vehicle_category = vehicle_category;
-		this.vehicle_subcategory = vehicle_subcategory;
+		this.category_vehicle = category_vehicle;
+		this.subcategory_vehicle = subcategory_vehicle;
 		
 	}
 
