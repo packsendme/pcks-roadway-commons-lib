@@ -16,35 +16,60 @@ import lombok.Setter;
 public class Vehicle implements Serializable{
 
 	/**
-	 * 
+	 * 1820218650765
 	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	public String id;
-	public String vehicle_name;
-	public String vehicle_type;
-	public String vehicle_style;
-	public String bodywork_vehicle;
-	public Double weight_max;
-	public Integer axis_total;
-	public Integer people_max;
-	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
+	public String category_name;
+
+	// Category Vehicle
+	public String type_vehicle;
+	public String category_vehicle;
+	public String subcategory_vehicle;
 	public String transport_type;
+
+	// Weight
+	public Double weight_max;
+	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
+	public Integer axis_total;
+
+	//People
+	public Integer people_max;
 	
-	public Vehicle(String vehicle_name, String vehicle_type, String vehicle_style, String bodywork_vehicle, Double weight_max, Integer axis_total,
-			Map<Integer, String> unity_weight, String transport_type, Integer people_max) {
+	// Dimension
+	public Double height_dimension_max;
+	public Double width_dimension_max;
+	public Double length_dimension_max;
+
+	public String bodywork_vehicle;
+	
+
+
+	public Vehicle(String category_name, String type_vehicle, String category_vehicle, String subcategory_vehicle,
+			String transport_type, Double weight_max, Map<Integer, String> unity_weight, Integer axis_total,
+			Integer people_max, Double height_dimension_max, Double width_dimension_max, Double length_dimension_max,
+			String bodywork_vehicle) {
 		super();
-		this.vehicle_name = vehicle_name;
-		this.vehicle_type = vehicle_type;
-		this.vehicle_style = vehicle_style;
-		this.bodywork_vehicle = bodywork_vehicle;
-		this.weight_max = weight_max;
-		this.axis_total = axis_total;
-		this.unity_weight = unity_weight;
+		this.category_name = category_name;
+		this.type_vehicle = type_vehicle;
+		this.category_vehicle = category_vehicle;
+		this.subcategory_vehicle = subcategory_vehicle;
 		this.transport_type = transport_type;
+		this.weight_max = weight_max;
+		this.unity_weight = unity_weight;
+		this.axis_total = axis_total;
 		this.people_max = people_max;
+		this.height_dimension_max = height_dimension_max;
+		this.width_dimension_max = width_dimension_max;
+		this.length_dimension_max = length_dimension_max;
+		this.bodywork_vehicle = bodywork_vehicle;
 	}
+
+
+
+
 
 	public Vehicle() {
 		super();

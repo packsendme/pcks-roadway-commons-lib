@@ -78,15 +78,11 @@ public class CategoryDto implements Serializable{
 			List<VehicleDto> vehiclesDTO_L = new ArrayList<VehicleDto>();
 			if(categoryEntity.vehicles.size() >= 1) {
 				for(Vehicle v : categoryEntity.vehicles) {
-					VehicleDto vehicleDto = new VehicleDto(v.vehicle_name, v.vehicle_type, v.vehicle_style, v.bodywork_vehicle, v.weight_max, v.axis_total, v.unity_weight, v.transport_type, v.people_max);
-					
-					System.out.println(" ");
-					System.out.println(" ===================== ");
-					System.out.println(" VEHICLE_NAME "+ v.vehicle_name);
-					System.out.println(" ===================== ");
-					
-					vehiclesDTO_L.add(vehicleDto);
-					vehicleDto = null;
+				VehicleDto vehicleDto = new VehicleDto(v.category_name, v.type_vehicle, v.category_vehicle, v.subcategory_vehicle,
+				v.transport_type, v.weight_max, v.unity_weight, v.axis_total, v.people_max, v.height_dimension_max, v.width_dimension_max, 
+				v.length_dimension_max,v.bodywork_vehicle);
+				vehiclesDTO_L.add(vehicleDto);
+				vehicleDto = null;
 				}
 			}
 			categoryDTO.vehicles = vehiclesDTO_L;
@@ -115,12 +111,9 @@ public class CategoryDto implements Serializable{
 		Vehicle vehicle = null;
 		if(categoryDto.vehicles.size() >= 1) {
 			for(VehicleDto v : categoryDto.vehicles) {
-				System.out.println(" ");
-				System.out.println(" ===================== ");
-				System.out.println(" VEHICLE_NAME "+ v.vehicle_name);
-				System.out.println(" ===================== ");
-
-				vehicle = new Vehicle(v.vehicle_name, v.vehicle_type, v.vehicle_style, v.bodywork_vehicle, v.weight_max, v.axis_total, v.unity_weight, v.transport_type, v.people_max);
+				vehicle = new Vehicle(v.category_name, v.type_vehicle, v.category_vehicle, v.subcategory_vehicle,
+				v.transport_type, v.weight_max, v.unity_weight, v.axis_total, v.people_max, v.height_dimension_max, v.width_dimension_max, 
+				v.length_dimension_max,v.bodywork_vehicle);
 				vehicleL.add(vehicle);
 				vehicle = null;
 			}

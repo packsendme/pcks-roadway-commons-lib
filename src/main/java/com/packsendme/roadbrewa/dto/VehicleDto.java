@@ -22,29 +22,48 @@ public class VehicleDto implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	public String id;
-	public String vehicle_name;
-	public String vehicle_type;
-	public String vehicle_style;
-	public String bodywork_vehicle;
-	public Double weight_max;
-	public Integer axis_total;
-	public Integer people_max;
-	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
+	public String category_name;
+
+	// Category Vehicle
+	public String type_vehicle;
+	public String category_vehicle;
+	public String subcategory_vehicle;
 	public String transport_type;
+
+	// Weight
+	public Double weight_max;
+	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
+	public Integer axis_total;
+
+	//People
+	public Integer people_max;
+	
+	// Dimension
+	public Double height_dimension_max;
+	public Double width_dimension_max;
+	public Double length_dimension_max;
+
+	public String bodywork_vehicle;
 	
 
-	public VehicleDto(String vehicle_name, String vehicle_type, String vehicle_style, String bodywork_vehicle, Double weight_max, Integer axis_total,
-			Map<Integer, String> unity_weight, String transport_type, Integer people_max) {
+	public VehicleDto(String category_name, String type_vehicle, String category_vehicle, String subcategory_vehicle,
+			String transport_type, Double weight_max, Map<Integer, String> unity_weight, Integer axis_total,
+			Integer people_max, Double height_dimension_max, Double width_dimension_max, Double length_dimension_max,
+			String bodywork_vehicle) {
 		super();
-		this.vehicle_name = vehicle_name;
-		this.vehicle_type = vehicle_type;
-		this.vehicle_style = vehicle_style;
-		this.bodywork_vehicle = bodywork_vehicle;
-		this.weight_max = weight_max;
-		this.axis_total = axis_total;
-		this.unity_weight = unity_weight;
+		this.category_name = category_name;
+		this.type_vehicle = type_vehicle;
+		this.category_vehicle = category_vehicle;
+		this.subcategory_vehicle = subcategory_vehicle;
 		this.transport_type = transport_type;
+		this.weight_max = weight_max;
+		this.unity_weight = unity_weight;
+		this.axis_total = axis_total;
 		this.people_max = people_max;
+		this.height_dimension_max = height_dimension_max;
+		this.width_dimension_max = width_dimension_max;
+		this.length_dimension_max = length_dimension_max;
+		this.bodywork_vehicle = bodywork_vehicle;
 	}
 
 
@@ -63,15 +82,19 @@ public class VehicleDto implements Serializable{
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new Vehicle();
 		}
-		entity.vehicle_name = vehicle.vehicle_name;
-		entity.vehicle_type = vehicle.vehicle_type;
-		entity.vehicle_style = vehicle.vehicle_style;
-		entity.bodywork_vehicle = vehicle.bodywork_vehicle;
+		entity.category_name = vehicle.category_name;
+		entity.type_vehicle = vehicle.type_vehicle;
+		entity.category_vehicle = vehicle.category_vehicle;
+		entity.subcategory_vehicle = vehicle.subcategory_vehicle;
+		entity.transport_type = vehicle.transport_type;
 		entity.weight_max = vehicle.weight_max;
-		entity.axis_total = vehicle.axis_total;
 		entity.unity_weight = vehicle.unity_weight;
-		entity.transport_type = vehicle.transport_type; 
+		entity.axis_total = vehicle.axis_total;
 		entity.people_max = vehicle.people_max;
+		entity.height_dimension_max = vehicle.height_dimension_max;
+		entity.width_dimension_max = vehicle.width_dimension_max;
+		entity.length_dimension_max = vehicle.length_dimension_max;
+		entity.bodywork_vehicle = vehicle.bodywork_vehicle;
 		return entity;
 	}
 	
@@ -84,15 +107,19 @@ public class VehicleDto implements Serializable{
 		for(Vehicle vehicle : vehicle_L) {
 			vehicleDto = new VehicleDto();
 			vehicleDto.id = vehicle.id;
-			vehicleDto.vehicle_name = vehicle.vehicle_name;
-			vehicleDto.vehicle_type = vehicle.vehicle_type;
-			vehicleDto.vehicle_style = vehicle.vehicle_style;
-			vehicleDto.bodywork_vehicle = vehicle.bodywork_vehicle;
+			vehicleDto.category_name = vehicle.category_name;
+			vehicleDto.type_vehicle = vehicle.type_vehicle;
+			vehicleDto.category_vehicle = vehicle.category_vehicle;
+			vehicleDto.subcategory_vehicle = vehicle.subcategory_vehicle;
+			vehicleDto.transport_type = vehicle.transport_type;
 			vehicleDto.weight_max = vehicle.weight_max;
-			vehicleDto.axis_total = vehicle.axis_total;
 			vehicleDto.unity_weight = vehicle.unity_weight;
-			vehicleDto.transport_type = vehicle.transport_type; 
+			vehicleDto.axis_total = vehicle.axis_total;
 			vehicleDto.people_max = vehicle.people_max;
+			vehicleDto.height_dimension_max = vehicle.height_dimension_max;
+			vehicleDto.width_dimension_max = vehicle.width_dimension_max;
+			vehicleDto.length_dimension_max = vehicle.length_dimension_max;
+			vehicleDto.bodywork_vehicle = vehicle.bodywork_vehicle;
 			vehicleDto_L.add(vehicleDto);
 		}
 		return vehicleDto_L;
