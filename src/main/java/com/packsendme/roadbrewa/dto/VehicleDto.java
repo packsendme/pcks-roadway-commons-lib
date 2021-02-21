@@ -34,6 +34,7 @@ public class VehicleDto implements Serializable{
 	public Double weight_max;
 	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public Integer axis_total;
+	
 
 	//People
 	public Integer people_max;
@@ -43,13 +44,16 @@ public class VehicleDto implements Serializable{
 	public Double width_dimension_max;
 	public Double length_dimension_max;
 
+	//Fuel Consumption
+	public Double fuel_consumption;
+	
 	public String bodywork_vehicle;
 	
 
 	public VehicleDto(String category_vehicle, String type_vehicle, String classification_vehicle, String subclassification_vehicle,
 			String transport_type, Double weight_max, Map<Integer, String> unity_weight, Integer axis_total,
 			Integer people_max, Double height_dimension_max, Double width_dimension_max, Double length_dimension_max,
-			String bodywork_vehicle) {
+			Double fuel_consumption, String bodywork_vehicle) {
 		super();
 		this.category_vehicle = category_vehicle;
 		this.type_vehicle = type_vehicle;
@@ -63,6 +67,7 @@ public class VehicleDto implements Serializable{
 		this.height_dimension_max = height_dimension_max;
 		this.width_dimension_max = width_dimension_max;
 		this.length_dimension_max = length_dimension_max;
+		this.fuel_consumption = fuel_consumption;
 		this.bodywork_vehicle = bodywork_vehicle;
 	}
 
@@ -94,6 +99,7 @@ public class VehicleDto implements Serializable{
 		entity.height_dimension_max = vehicle.height_dimension_max;
 		entity.width_dimension_max = vehicle.width_dimension_max;
 		entity.length_dimension_max = vehicle.length_dimension_max;
+		entity.fuel_consumption = fuel_consumption;
 		entity.bodywork_vehicle = vehicle.bodywork_vehicle;
 		return entity;
 	}
@@ -119,6 +125,7 @@ public class VehicleDto implements Serializable{
 			vehicleDto.height_dimension_max = vehicle.height_dimension_max;
 			vehicleDto.width_dimension_max = vehicle.width_dimension_max;
 			vehicleDto.length_dimension_max = vehicle.length_dimension_max;
+			vehicleDto.fuel_consumption = vehicle.fuel_consumption;
 			vehicleDto.bodywork_vehicle = vehicle.bodywork_vehicle;
 			vehicleDto_L.add(vehicleDto);
 		}
