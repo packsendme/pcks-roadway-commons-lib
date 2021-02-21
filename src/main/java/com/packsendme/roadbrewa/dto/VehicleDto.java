@@ -99,7 +99,7 @@ public class VehicleDto implements Serializable{
 		entity.height_dimension_max = vehicle.height_dimension_max;
 		entity.width_dimension_max = vehicle.width_dimension_max;
 		entity.length_dimension_max = vehicle.length_dimension_max;
-		entity.fuel_consumption = fuel_consumption;
+		entity.fuel_consumption = vehicle.fuel_consumption;
 		entity.bodywork_vehicle = vehicle.bodywork_vehicle;
 		return entity;
 	}
