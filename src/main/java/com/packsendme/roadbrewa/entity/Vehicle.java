@@ -22,12 +22,12 @@ public class Vehicle implements Serializable{
 	
 	@Id
 	public String id;
-	public String category_name;
+	public String category_vehicle;
 
 	// Category Vehicle
 	public String type_vehicle;
-	public String category_vehicle;
-	public String subcategory_vehicle;
+	public String classification_vehicle;
+	public String subclassification_vehicle;
 	public String transport_type;
 
 	// Weight
@@ -47,15 +47,15 @@ public class Vehicle implements Serializable{
 	
 
 
-	public Vehicle(String category_name, String type_vehicle, String category_vehicle, String subcategory_vehicle,
+	public Vehicle(String category_vehicle, String type_vehicle, String classification_vehicle, String subclassification_vehicle,
 			String transport_type, Double weight_max, Map<Integer, String> unity_weight, Integer axis_total,
 			Integer people_max, Double height_dimension_max, Double width_dimension_max, Double length_dimension_max,
 			String bodywork_vehicle) {
 		super();
-		this.category_name = category_name;
-		this.type_vehicle = type_vehicle;
 		this.category_vehicle = category_vehicle;
-		this.subcategory_vehicle = subcategory_vehicle;
+		this.type_vehicle = type_vehicle;
+		this.classification_vehicle = classification_vehicle;
+		this.subclassification_vehicle = subclassification_vehicle;
 		this.transport_type = transport_type;
 		this.weight_max = weight_max;
 		this.unity_weight = unity_weight;
