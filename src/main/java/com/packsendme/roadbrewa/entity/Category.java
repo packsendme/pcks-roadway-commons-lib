@@ -26,6 +26,7 @@ public class Category implements Serializable{
 	@Id
 	public String id;
 	public String name_category;
+	public String initials;
 	public String transport;
 	public Double weight_max;
 	public Integer people_max;
@@ -35,10 +36,11 @@ public class Category implements Serializable{
 	public Date dt_update;
 	
 
-	public Category(String name_category, String transport, Double weight_max, Integer people_max,
+	public Category(String name_category, String initials, String transport, Double weight_max, Integer people_max,
 			Map<Integer, String> unity_weight, List<Vehicle> vehicles, Date dt_inc, Date dt_update) {
 		super();
 		this.name_category = name_category;
+		this.initials = initials;
 		this.transport = transport;
 		this.weight_max = weight_max;
 		this.people_max = people_max;

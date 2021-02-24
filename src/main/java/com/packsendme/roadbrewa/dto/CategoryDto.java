@@ -25,6 +25,7 @@ public class CategoryDto implements Serializable{
 
 	public String id;
 	public String name_category;
+	public String initials;
 	public String transport;
 	public Double weight_max;
 	public Integer people_max;
@@ -34,10 +35,11 @@ public class CategoryDto implements Serializable{
 	public Date dt_update;
 
 
-	public CategoryDto(String name_category, String transport, Double weight_max, Integer people_max, 
+	public CategoryDto(String name_category, String initials, String transport, Double weight_max, Integer people_max, 
 			Map<Integer, String> unity_weight, List<VehicleDto> vehicles, Date dt_inc, Date dt_update) {
 		super();
 		this.name_category = name_category;
+		this.initials = initials;
 		this.transport = transport;
 		this.weight_max = weight_max;
 		this.people_max = people_max;
@@ -67,6 +69,7 @@ public class CategoryDto implements Serializable{
 			categoryDTO = new CategoryDto(); 
 			categoryDTO.id = categoryEntity.id;
 			categoryDTO.name_category = categoryEntity.name_category;
+			categoryDTO.initials = categoryEntity.initials;
 			categoryDTO.transport = categoryEntity.transport;
 			categoryDTO.weight_max = categoryEntity.weight_max;
 			categoryDTO.people_max = categoryEntity.people_max;
@@ -99,6 +102,7 @@ public class CategoryDto implements Serializable{
 		
 		// Category-Head
 		category.name_category = categoryDto.name_category;
+		category.initials = categoryDto.initials;
 		category.transport = categoryDto.transport;
 		category.weight_max = categoryDto.weight_max;
 		category.people_max = categoryDto.people_max;
