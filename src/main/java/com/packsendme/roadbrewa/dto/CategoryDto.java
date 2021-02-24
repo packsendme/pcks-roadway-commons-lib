@@ -111,7 +111,7 @@ public class CategoryDto implements Serializable{
 		Vehicle vehicle = null;
 		if(categoryDto.vehicles.size() >= 1) {
 			for(VehicleDto v : categoryDto.vehicles) {
-				vehicle = new Vehicle(v.category_vehicle, v.type_vehicle, v.category_vehicle, v.subclassification_vehicle,
+				vehicle = new Vehicle(v.category_vehicle, v.type_vehicle, v.classification_vehicle, v.subclassification_vehicle,
 				v.transport_type, v.weight_max, v.unity_weight, v.axis_total, v.people_max, v.height_dimension_max, v.width_dimension_max, 
 				v.length_dimension_max,v.fuel_consumption,v.bodywork_vehicle);
 				vehicleL.add(vehicle);
