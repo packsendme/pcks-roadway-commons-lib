@@ -33,6 +33,11 @@ public class RoadwayDto implements Serializable{
 	public String blocked_id;
 	public String date_creation;
 	public String date_change;
+	
+	public Double fragile;
+	public Double persishable;
+	public Double gain_transportation;
+	
 	public List<CategoryDto> categories = new ArrayList<CategoryDto>();
 	public List<CostsDto> costs = new ArrayList<CostsDto>();
 	public List<LocationDto> locations = new ArrayList<LocationDto>();
@@ -41,7 +46,7 @@ public class RoadwayDto implements Serializable{
 	
 
 	public RoadwayDto(String id, String name_bre, String transport, String blocked_id, String date_creation, String date_change,
-			List<CategoryDto> categories, List<CostsDto> costs, List<LocationDto> locations, String version,
+			Double fragile, Double persishable, Double gain_transportation, List<CategoryDto> categories, List<CostsDto> costs, List<LocationDto> locations, String version,
 			String status) {
 		super();
 		this.id = id;
@@ -51,6 +56,9 @@ public class RoadwayDto implements Serializable{
 		this.date_creation = date_creation;
 		this.date_change = date_change;
 		this.categories = categories;
+		this.fragile = fragile; 
+		this.persishable = persishable;  
+		this.gain_transportation = gain_transportation;
 		this.costs = costs;
 		this.locations = locations;
 		this.version = version;
@@ -80,6 +88,9 @@ public class RoadwayDto implements Serializable{
 		roadway.blocked_id = roadwayDto.blocked_id;
 		roadway.date_creation = roadwayDto.date_creation; //dateFormat.parse(roadwayBRE.date_creation);
 		roadway.date_change = roadwayDto.date_change; //dateFormat.parse(roadwayBRE.date_change);
+		roadway.fragile = roadwayDto.fragile; 
+		roadway.persishable = roadwayDto.persishable;  
+		roadway.gain_transportation = roadwayDto.gain_transportation; 
 		roadway.status = roadwayDto.status;
 		roadway.version = roadwayDto.version;
 
@@ -151,6 +162,9 @@ public class RoadwayDto implements Serializable{
 			roadwayDto.blocked_id = roadway.blocked_id;
 			roadwayDto.date_creation = roadway.date_creation; //dateFormat.format(roadwayModel_Obj.date_creation);
 			roadwayDto.date_change = roadway.date_change;// dateFormat.format(roadwayModel_Obj.date_change);
+			roadwayDto.fragile = roadway.fragile; 
+			roadwayDto.persishable = roadway.persishable;  
+			roadwayDto.gain_transportation = roadway.gain_transportation;
 			roadwayDto.status = roadway.status;
 			roadwayDto.version = roadway.version;
 			
