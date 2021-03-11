@@ -31,7 +31,7 @@ public class Roadway implements Serializable {
 	public String date_change;
 	public Double fragile;
 	public Double persishable;
-	public Double operation_value;
+	public Double operation_cost;
 	public Boolean antt;
 	public List<Category> categories = new ArrayList<Category>();
 	public Map<String, List<Costs>> costs = new HashMap<String, List<Costs>>(); 
@@ -40,7 +40,7 @@ public class Roadway implements Serializable {
 	public String status;
 
 	public Roadway(String name_bre, String transport,  String blocked_id, String date_creation, String date_change,
-			Double fragile, Double persishable, Double operation_value, List<Category> categories, Map<String, List<Costs>> costs, List<Location> locations, String version,
+			Double fragile, Double persishable, Double operation_cost, List<Category> categories, Map<String, List<Costs>> costs, List<Location> locations, String version,
 			String status) {
 		super();
 		this.name_bre = name_bre;
@@ -50,7 +50,7 @@ public class Roadway implements Serializable {
 		this.date_change = date_change;
 		this.fragile = fragile; 
 		this.persishable = persishable;  
-		this.operation_value = operation_value; 
+		this.operation_cost = operation_cost; 
 		this.categories = categories;
 		this.costs = costs;
 		this.locations = locations;

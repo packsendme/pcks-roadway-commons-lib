@@ -36,7 +36,7 @@ public class RoadwayDto implements Serializable{
 	
 	public Double fragile;
 	public Double persishable;
-	public Double operation_value;
+	public Double operation_cost;
 	
 	public List<CategoryDto> categories = new ArrayList<CategoryDto>();
 	public List<CostsDto> costs = new ArrayList<CostsDto>();
@@ -46,7 +46,7 @@ public class RoadwayDto implements Serializable{
 	
 
 	public RoadwayDto(String id, String name_bre, String transport, String blocked_id, String date_creation, String date_change,
-			Double fragile, Double persishable, Double operation_value, List<CategoryDto> categories, List<CostsDto> costs, List<LocationDto> locations, String version,
+			Double fragile, Double persishable, Double operation_cost, List<CategoryDto> categories, List<CostsDto> costs, List<LocationDto> locations, String version,
 			String status) {
 		super();
 		this.id = id;
@@ -58,7 +58,7 @@ public class RoadwayDto implements Serializable{
 		this.categories = categories;
 		this.fragile = fragile; 
 		this.persishable = persishable;  
-		this.operation_value = operation_value;
+		this.operation_cost = operation_cost;
 		this.costs = costs;
 		this.locations = locations;
 		this.version = version;
@@ -90,7 +90,7 @@ public class RoadwayDto implements Serializable{
 		roadway.date_change = roadwayDto.date_change; //dateFormat.parse(roadwayBRE.date_change);
 		roadway.fragile = roadwayDto.fragile; 
 		roadway.persishable = roadwayDto.persishable;  
-		roadway.operation_value = roadwayDto.operation_value; 
+		roadway.operation_cost = roadwayDto.operation_cost; 
 		roadway.status = roadwayDto.status;
 		roadway.version = roadwayDto.version;
 
@@ -164,7 +164,7 @@ public class RoadwayDto implements Serializable{
 			roadwayDto.date_change = roadway.date_change;// dateFormat.format(roadwayModel_Obj.date_change);
 			roadwayDto.fragile = roadway.fragile; 
 			roadwayDto.persishable = roadway.persishable;  
-			roadwayDto.operation_value = roadway.operation_value;
+			roadwayDto.operation_cost = roadway.operation_cost;
 			roadwayDto.status = roadway.status;
 			roadwayDto.version = roadway.version;
 			
