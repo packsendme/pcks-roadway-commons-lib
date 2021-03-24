@@ -23,19 +23,19 @@ public class TollsFuelDto implements Serializable {
 	public Double tolls_price;
 	public Double fuelGasoline_price;
 	public Double fuelDiesel_price;
-	public String current;
+	public String currency;
 	public String dt_inc;
 	public String dt_update;
 
 	
 	public TollsFuelDto(String country, Double tolls_price, Double fuelGasoline_price, Double fuelDiesel_price,
-			String current, String dt_inc, String dt_update) {
+			String currency, String dt_inc, String dt_update) {
 		super();
 		this.country = country;
 		this.tolls_price = tolls_price;
 		this.fuelGasoline_price = fuelGasoline_price;
 		this.fuelDiesel_price = fuelDiesel_price;
-		this.current = current;
+		this.currency = currency;
 		this.dt_inc = dt_inc;
 		this.dt_update = dt_update;
 
@@ -63,7 +63,7 @@ public class TollsFuelDto implements Serializable {
 		tollsFuel.tolls_price = tollsfuelDto.tolls_price;
 		tollsFuel.fuelGasoline_price = tollsfuelDto.fuelGasoline_price;
 		tollsFuel.fuelDiesel_price = tollsfuelDto.fuelDiesel_price;
-		tollsFuel.current = tollsfuelDto.current;
+		tollsFuel.currency = tollsfuelDto.currency;
 		tollsFuel.dt_inc = tollsfuelDto.dt_inc;
 		tollsFuel.dt_update = tollsfuelDto.dt_update;
 		return tollsFuel;
@@ -75,7 +75,7 @@ public class TollsFuelDto implements Serializable {
 		tollsFuel_Dto.tolls_price = entity.tolls_price;
 		tollsFuel_Dto.fuelGasoline_price = entity.fuelGasoline_price;
 		tollsFuel_Dto.fuelDiesel_price = entity.fuelDiesel_price;
-		tollsFuel_Dto.current = entity.current;
+		tollsFuel_Dto.currency = entity.currency;
 		tollsFuel_Dto.dt_inc = entity.dt_inc;
 		tollsFuel_Dto.dt_update = entity.dt_update;
 		return tollsFuel_Dto;
