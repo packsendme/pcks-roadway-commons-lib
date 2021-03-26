@@ -1,8 +1,8 @@
 package com.packsendme.roadbrewa.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -16,31 +16,62 @@ import lombok.Setter;
 public class Vehicle implements Serializable{
 
 	/**
-	 * 
+	 * 1820218650765
 	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	public String id;
-	public String vehicle_type;
-	public List<String> bodywork_vehicle = new ArrayList<String>();
-	public Double cargo_max;
+	public String category_vehicle;
+
+	// Category Vehicle
+	public String type_vehicle;
+	public String classification_vehicle;
+	public String subclassification_vehicle;
+	public String transport_type;
+
+	// Weight
+	public Double weight_max;
+	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public Integer axis_total;
-	public String unity_measurement_weight;
-	public boolean people_transport;
-	public String people;
+
+	//People
+	public Integer people_max;
 	
-	public Vehicle(String vehicle_type, List<String> bodywork_vehicle, Double cargo_max, Integer axis_total,
-			String unity_measurement_weight, boolean people_transport, String people) {
+	// Dimension
+	public Double height_dimension_max;
+	public Double width_dimension_max;
+	public Double length_dimension_max;
+	
+	//Fuel Consumption
+	public String fuel_type;
+	public Double fuel_consumption;
+
+	public String bodywork_vehicle;
+	
+
+	public Vehicle(String category_vehicle, String type_vehicle, String classification_vehicle, String subclassification_vehicle,
+			String transport_type, Double weight_max, Map<Integer, String> unity_weight, Integer axis_total,
+			Integer people_max, Double height_dimension_max, Double width_dimension_max, Double length_dimension_max,
+			String fuel_type, Double fuel_consumption, String bodywork_vehicle) {
 		super();
-		this.vehicle_type = vehicle_type;
-		this.bodywork_vehicle = bodywork_vehicle;
-		this.cargo_max = cargo_max;
+		this.category_vehicle = category_vehicle;
+		this.type_vehicle = type_vehicle;
+		this.classification_vehicle = classification_vehicle;
+		this.subclassification_vehicle = subclassification_vehicle;
+		this.transport_type = transport_type;
+		this.weight_max = weight_max;
+		this.unity_weight = unity_weight;
 		this.axis_total = axis_total;
-		this.unity_measurement_weight = unity_measurement_weight;
-		this.people_transport = people_transport;
-		this.people = people;
+		this.people_max = people_max;
+		this.height_dimension_max = height_dimension_max;
+		this.width_dimension_max = width_dimension_max;
+		this.length_dimension_max = length_dimension_max;
+		this.fuel_type = fuel_type;
+		this.fuel_consumption = fuel_consumption;
+		this.bodywork_vehicle = bodywork_vehicle;
 	}
+
 
 	public Vehicle() {
 		super();

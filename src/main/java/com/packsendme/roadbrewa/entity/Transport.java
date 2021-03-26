@@ -21,13 +21,17 @@ public class Transport implements Serializable{
 	@Id
 	public String id;
 	public String name_transport;
+	public String identifier;
 	public String initials;
+	public String transport_type;
 
 	
-	public Transport(String name_transport,String initials) {
+	public Transport(String name_transport,String identifier,String initials,String transport_type) {
 		super();
 		this.name_transport = name_transport;
+		this.identifier = identifier;
 		this.initials = initials;
+		this.transport_type = transport_type;
 	}
 
 

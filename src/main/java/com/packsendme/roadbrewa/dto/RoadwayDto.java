@@ -33,6 +33,10 @@ public class RoadwayDto implements Serializable{
 	public String blocked_id;
 	public String date_creation;
 	public String date_change;
+	public Double fragile_cost;
+	public Double persishable_cost;
+	public Double operation_cost;
+	public Double employeer_cost;
 	public List<CategoryDto> categories = new ArrayList<CategoryDto>();
 	public List<CostsDto> costs = new ArrayList<CostsDto>();
 	public List<LocationDto> locations = new ArrayList<LocationDto>();
@@ -40,9 +44,12 @@ public class RoadwayDto implements Serializable{
 	public String status;
 	
 
-	public RoadwayDto(String id, String name_bre, String transport, String blocked_id, String date_creation, String date_change,
-			List<CategoryDto> categories, List<CostsDto> costs, List<LocationDto> locations, String version,
-			String status) {
+
+
+	public RoadwayDto(String id, String name_bre, String transport, String blocked_id, String date_creation,
+			String date_change, Double fragile_cost, Double persishable_cost, Double operation_cost,
+			Double employeer_cost, List<CategoryDto> categories, List<CostsDto> costs, List<LocationDto> locations,
+			String version, String status) {
 		super();
 		this.id = id;
 		this.name_bre = name_bre;
@@ -50,6 +57,10 @@ public class RoadwayDto implements Serializable{
 		this.blocked_id = blocked_id;
 		this.date_creation = date_creation;
 		this.date_change = date_change;
+		this.fragile_cost = fragile_cost;
+		this.persishable_cost = persishable_cost;
+		this.operation_cost = operation_cost;
+		this.employeer_cost = employeer_cost;
 		this.categories = categories;
 		this.costs = costs;
 		this.locations = locations;
@@ -80,6 +91,10 @@ public class RoadwayDto implements Serializable{
 		roadway.blocked_id = roadwayDto.blocked_id;
 		roadway.date_creation = roadwayDto.date_creation; //dateFormat.parse(roadwayBRE.date_creation);
 		roadway.date_change = roadwayDto.date_change; //dateFormat.parse(roadwayBRE.date_change);
+		roadway.fragile_cost = roadwayDto.fragile_cost; 
+		roadway.persishable_cost = roadwayDto.persishable_cost;  
+		roadway.operation_cost = roadwayDto.operation_cost; 
+		roadway.employeer_cost = roadwayDto.employeer_cost;
 		roadway.status = roadwayDto.status;
 		roadway.version = roadwayDto.version;
 
@@ -122,9 +137,12 @@ public class RoadwayDto implements Serializable{
 						costs.weight_cost = costsDto.weight_cost;
 						costs.distance_cost = costsDto.distance_cost;
 						costs.worktime_cost = costsDto.worktime_cost;
+						costs.heightDimension_cost = costsDto.heightDimension_cost;
+						costs.widthDimension_cost = costsDto.heightDimension_cost;
+						costs.lengthDimension_cost = costsDto.heightDimension_cost;
 						costs.average_consumption_cost = costsDto.average_consumption_cost;
-						costs.rate_exchange = costsDto.rate_exchange;
-						costs.current_exchange = costsDto.current_exchange;
+						costs.currency_symbol = costsDto.currency_symbol;
+						costs.currency = costsDto.currency;
 						costs.statusChange = costsDto.statusChange;
 						costs_L.add(costs);
 					}
@@ -151,6 +169,10 @@ public class RoadwayDto implements Serializable{
 			roadwayDto.blocked_id = roadway.blocked_id;
 			roadwayDto.date_creation = roadway.date_creation; //dateFormat.format(roadwayModel_Obj.date_creation);
 			roadwayDto.date_change = roadway.date_change;// dateFormat.format(roadwayModel_Obj.date_change);
+			roadwayDto.fragile_cost = roadway.fragile_cost; 
+			roadwayDto.persishable_cost = roadway.persishable_cost; 
+			roadwayDto.operation_cost = roadway.operation_cost;
+			roadwayDto.employeer_cost = roadway.employeer_cost;
 			roadwayDto.status = roadway.status;
 			roadwayDto.version = roadway.version;
 			
@@ -183,9 +205,12 @@ public class RoadwayDto implements Serializable{
 						costsDto.weight_cost = costs.weight_cost;
 						costsDto.distance_cost = costs.distance_cost;
 						costsDto.worktime_cost = costs.worktime_cost;
+						costsDto.heightDimension_cost = costs.heightDimension_cost;
+						costsDto.widthDimension_cost = costs.heightDimension_cost;
+						costsDto.lengthDimension_cost = costs.heightDimension_cost;
 						costsDto.average_consumption_cost = costs.average_consumption_cost;
-						costsDto.rate_exchange = costs.rate_exchange;
-						costsDto.current_exchange = costs.current_exchange;
+						costsDto.currency_symbol = costs.currency_symbol;
+						costsDto.currency = costs.currency;
 						costsDto.statusChange = costs.statusChange;
 						costsDto_L.add(costsDto);
 					}

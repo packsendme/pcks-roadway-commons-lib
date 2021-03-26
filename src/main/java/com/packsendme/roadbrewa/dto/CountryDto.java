@@ -2,7 +2,9 @@ package com.packsendme.roadbrewa.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.packsendme.roadbrewa.component.RoadwayManagerConstants;
 import com.packsendme.roadbrewa.entity.Country;
@@ -23,18 +25,23 @@ public class CountryDto implements Serializable {
 	public String codcountry;
 	public String namecountry;
 	public String nameimagecountry;
-	public String formatnumbercountry;
+	public String identifier;
+	public Map<String,String> unityWeightL = new HashMap<String,String>();
+	public Map<String,String> unityDistanceL = new HashMap<String,String>();
+
 	
-	
-	public CountryDto(String codcountry, String namecountry, String nameimagecountry,
-			String formatnumbercountry) {
+ 
+
+	public CountryDto(String codcountry, String namecountry, String nameimagecountry, String identifier,
+			Map<String, String> unityWeightL, Map<String, String> unityDistanceL) {
 		super();
 		this.codcountry = codcountry;
 		this.namecountry = namecountry;
 		this.nameimagecountry = nameimagecountry;
-		this.formatnumbercountry = formatnumbercountry;
+		this.identifier = identifier;
+		this.unityWeightL = unityWeightL;
+		this.unityDistanceL = unityDistanceL;
 	}
-	
 
 	public CountryDto() {
 		super();
@@ -46,26 +53,38 @@ public class CountryDto implements Serializable {
 	 * ==============================================
 	 */
 	
-	public Country dtoTOentity(CountryDto country, Country entity, String typeOperation) {
+	public Country dtoTOentity(CountryDto countryDto, Country entity, String typeOperation) {
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new Country();
 		}
-		entity.codcountry = country.codcountry;
-		entity.namecountry = country.namecountry;
-		entity.nameimagecountry = country.nameimagecountry;
-		entity.formatnumbercountry = country.formatnumbercountry;
+		entity.identifier = countryDto.identifier;
+		entity.codcountry = countryDto.codcountry;
+		entity.namecountry = countryDto.namecountry;
+		entity.nameimagecountry = countryDto.nameimagecountry;
+		if(countryDto.unityWeightL != null) {
+			entity.unityWeightL = countryDto.unityWeightL;
+		}
+		if(countryDto.unityDistanceL != null) {
+			entity.unityDistanceL = countryDto.unityDistanceL;
+		}
 		return entity;
 	}
 	
 	public List<CountryDto> entityTOdto(List<Country> country_L) {
 		List<CountryDto> countryDto_L = new ArrayList<CountryDto>();
 
-		for(Country country : country_L) {
+		for(Country entity : country_L) {
 			CountryDto countryDto = new CountryDto();
-			countryDto.codcountry = country.codcountry;
-			countryDto.namecountry = country.namecountry;
-			countryDto.nameimagecountry = country.nameimagecountry;
-			countryDto.formatnumbercountry = country.formatnumbercountry;
+			countryDto.identifier = entity.identifier;
+			countryDto.codcountry = entity.codcountry;
+			countryDto.namecountry = entity.namecountry;
+			countryDto.nameimagecountry = entity.nameimagecountry;
+			if(entity.unityWeightL != null) {
+				countryDto.unityWeightL = entity.unityWeightL;
+			}
+			if(entity.unityDistanceL != null) {
+				countryDto.unityDistanceL = entity.unityDistanceL;
+			}
 			countryDto_L.add(countryDto);
 		}
 		return countryDto_L;

@@ -2,7 +2,9 @@ package com.packsendme.roadbrewa.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 
@@ -23,14 +25,29 @@ public class UnityMeasurementDto implements Serializable{
 
 	@Id
 	public String id;	
-	public String unitMeasurement;
-	public String origin_country;
+	public String unityType;
+	public List<String> unityArea = new ArrayList<String>();
+	public List<String> unityVolume = new ArrayList<String>();
+	public Map<Integer, String> unityWeight = new HashMap<Integer, String>();
+	public List<String> unityTemperature = new ArrayList<String>();
+	public List<String> unityCurrency = new ArrayList<String>();
+		
 	
-	public UnityMeasurementDto(String unitMeasurement, String origin_country) {
+ 	
+
+
+	public UnityMeasurementDto(String unityType, List<String> unityArea, List<String> unityVolume, Map<Integer, String> unityWeight,
+			List<String> unityTemperature, List<String> unityCurrency) {
 		super();
-		this.unitMeasurement = unitMeasurement;
-		this.origin_country = origin_country;
+		this.unityType = unityType;
+		this.unityArea = unityArea;
+		this.unityVolume = unityVolume;
+		this.unityWeight = unityWeight;
+		this.unityTemperature = unityTemperature;
+		this.unityCurrency = unityCurrency;
 	}
+
+
 
 	public UnityMeasurementDto() {
 		super();
@@ -49,24 +66,44 @@ public class UnityMeasurementDto implements Serializable{
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new UnityMeasurement();
 		}
-		entity.unitMeasurement = unityDto.unitMeasurement;
-		entity.origin_country = unityDto.origin_country;
+		entity.unityType =  unityDto.unityType;
+		entity.unityArea = unityDto.unityArea;
+		entity.unityVolume = unityDto.unityVolume;
+		entity.unityWeight = unityDto.unityWeight;
+		entity.unityTemperature = unityDto.unityTemperature;
+		entity.unityCurrency = unityDto.unityCurrency;
 		return entity;
 	}
 	
-	public List<UnityMeasurementDto> entityTOdto(List<UnityMeasurement> unityMeasurement_L) {
+	public List<UnityMeasurementDto> entityTOdto_L(List<UnityMeasurement> unityMeasurement_L) {
 
 		List<UnityMeasurementDto> unityMeasurementDto_L = new ArrayList<UnityMeasurementDto>();
-		UnityMeasurementDto unityMeasurementDto = null;
+		UnityMeasurementDto unityDto = null;
 		
-		for(UnityMeasurement unityMeasurement :  unityMeasurement_L) {
-			unityMeasurementDto = new UnityMeasurementDto();  
-			unityMeasurementDto.id = unityMeasurement.id;
-			unityMeasurementDto.unitMeasurement = unityMeasurement.unitMeasurement;
-			unityMeasurementDto.origin_country = unityMeasurement.origin_country;
-			unityMeasurementDto_L.add(unityMeasurementDto);
+		for(UnityMeasurement entity :  unityMeasurement_L) {
+			unityDto = new UnityMeasurementDto();  
+			unityDto.id = entity.id;
+			unityDto.unityType =  entity.unityType;
+			unityDto.unityArea = entity.unityArea;
+			unityDto.unityVolume = entity.unityVolume;
+			unityDto.unityWeight = entity.unityWeight;
+			unityDto.unityTemperature = entity.unityTemperature;
+			unityDto.unityCurrency = entity.unityCurrency;
+			unityMeasurementDto_L.add(unityDto);
 		}
 		return unityMeasurementDto_L;
+	}
+	
+	public UnityMeasurementDto entityTOdto(UnityMeasurement entity) {
+		UnityMeasurementDto unityDto = new UnityMeasurementDto();  
+		unityDto.id = entity.id;
+		unityDto.unityType =  entity.unityType;
+		unityDto.unityArea = entity.unityArea;
+		unityDto.unityVolume = entity.unityVolume;
+		unityDto.unityWeight = entity.unityWeight;
+		unityDto.unityTemperature = entity.unityTemperature;
+		unityDto.unityCurrency = entity.unityCurrency;
+		return unityDto;
 	}
 	
  

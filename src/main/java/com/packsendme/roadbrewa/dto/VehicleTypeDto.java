@@ -21,14 +21,14 @@ public class VehicleTypeDto implements Serializable{
 
 	public String id;
 	public String type_vehicle;
+	
 
-	
-	
+
 	public VehicleTypeDto(String type_vehicle) {
 		super();
 		this.type_vehicle = type_vehicle;
 	}
-	
+
 
 	public VehicleTypeDto() {
 		super();
@@ -37,7 +37,7 @@ public class VehicleTypeDto implements Serializable{
 
 	
 	/* ==============================================
-	 *  V E H I C L E - TYPE  - P A R S E R  
+	 *  V E H I C L E -  TYPE  - P A R S E R  
 	 * ==============================================
 	 */
 

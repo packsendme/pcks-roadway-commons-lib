@@ -21,11 +21,14 @@ public class VehicleType implements Serializable{
 	@Id
 	public String id;	
 	public String type_vehicle;
-	 
+
+	
+	
 	public VehicleType(String type_vehicle) {
 		super();
 		this.type_vehicle = type_vehicle;
 	}
+
 
 
 	public VehicleType() {

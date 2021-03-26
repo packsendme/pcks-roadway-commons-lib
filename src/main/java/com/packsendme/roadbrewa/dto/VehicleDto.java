@@ -2,7 +2,9 @@ package com.packsendme.roadbrewa.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.packsendme.roadbrewa.component.RoadwayManagerConstants;
 import com.packsendme.roadbrewa.entity.Vehicle;
@@ -20,27 +22,57 @@ public class VehicleDto implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	public String id;
-	public String vehicle_type;
-	public List<String> bodywork_vehicle = new ArrayList<String>();
-	public Double cargo_max;
+	public String category_vehicle;
+
+	// Category Vehicle
+	public String type_vehicle;
+	public String classification_vehicle;
+	public String subclassification_vehicle;
+	public String transport_type;
+
+	// Weight
+	public Double weight_max;
+	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public Integer axis_total;
-	public String unity_measurement_weight;
-	public boolean people_transport;
-	public String people;
 	
 
+	//People
+	public Integer people_max;
+	
+	// Dimension
+	public Double height_dimension_max;
+	public Double width_dimension_max;
+	public Double length_dimension_max;
 
-	public VehicleDto(String vehicle_type, List<String> bodywork_vehicle, Double cargo_max, Integer axis_total,
-			String unity_measurement_weight, boolean people_transport, String people) {
+	//Fuel Consumption
+	public String fuel_type;
+	public Double fuel_consumption;
+	
+	public String bodywork_vehicle;
+	
+
+	public VehicleDto(String category_vehicle, String type_vehicle, String classification_vehicle, String subclassification_vehicle,
+			String transport_type, Double weight_max, Map<Integer, String> unity_weight, Integer axis_total,
+			Integer people_max, Double height_dimension_max, Double width_dimension_max, Double length_dimension_max,
+			String fuel_type, Double fuel_consumption, String bodywork_vehicle) {
 		super();
-		this.vehicle_type = vehicle_type;
-		this.bodywork_vehicle = bodywork_vehicle;
-		this.cargo_max = cargo_max;
+		this.category_vehicle = category_vehicle;
+		this.type_vehicle = type_vehicle;
+		this.classification_vehicle = classification_vehicle;
+		this.subclassification_vehicle = subclassification_vehicle;
+		this.transport_type = transport_type;
+		this.weight_max = weight_max;
+		this.unity_weight = unity_weight;
 		this.axis_total = axis_total;
-		this.unity_measurement_weight = unity_measurement_weight;
-		this.people_transport = people_transport;
-		this.people = people;
+		this.people_max = people_max;
+		this.height_dimension_max = height_dimension_max;
+		this.width_dimension_max = width_dimension_max;
+		this.length_dimension_max = length_dimension_max;
+		this.fuel_type = fuel_type;
+		this.fuel_consumption = fuel_consumption;
+		this.bodywork_vehicle = bodywork_vehicle;
 	}
+
 
 	public VehicleDto() {
 		super();
@@ -57,13 +89,21 @@ public class VehicleDto implements Serializable{
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new Vehicle();
 		}
-		entity.vehicle_type = vehicle.vehicle_type;
-		entity.bodywork_vehicle = vehicle.bodywork_vehicle;
-		entity.cargo_max = vehicle.cargo_max;
+		entity.category_vehicle = vehicle.category_vehicle;
+		entity.type_vehicle = vehicle.type_vehicle;
+		entity.classification_vehicle = vehicle.classification_vehicle;
+		entity.subclassification_vehicle = vehicle.subclassification_vehicle;
+		entity.transport_type = vehicle.transport_type;
+		entity.weight_max = vehicle.weight_max;
+		entity.unity_weight = vehicle.unity_weight;
 		entity.axis_total = vehicle.axis_total;
-		entity.unity_measurement_weight = vehicle.unity_measurement_weight;
-		entity.people_transport = vehicle.people_transport; 
-		entity.people = vehicle.people;
+		entity.people_max = vehicle.people_max;
+		entity.height_dimension_max = vehicle.height_dimension_max;
+		entity.width_dimension_max = vehicle.width_dimension_max;
+		entity.length_dimension_max = vehicle.length_dimension_max;
+		entity.fuel_type = vehicle.fuel_type;
+		entity.fuel_consumption = vehicle.fuel_consumption;
+		entity.bodywork_vehicle = vehicle.bodywork_vehicle;
 		return entity;
 	}
 	
@@ -76,13 +116,21 @@ public class VehicleDto implements Serializable{
 		for(Vehicle vehicle : vehicle_L) {
 			vehicleDto = new VehicleDto();
 			vehicleDto.id = vehicle.id;
-			vehicleDto.vehicle_type = vehicle.vehicle_type;
-			vehicleDto.bodywork_vehicle = vehicle.bodywork_vehicle;
-			vehicleDto.cargo_max = vehicle.cargo_max;
+			vehicleDto.category_vehicle = vehicle.category_vehicle;
+			vehicleDto.type_vehicle = vehicle.type_vehicle;
+			vehicleDto.classification_vehicle = vehicle.classification_vehicle;
+			vehicleDto.subclassification_vehicle = vehicle.subclassification_vehicle;
+			vehicleDto.transport_type = vehicle.transport_type;
+			vehicleDto.weight_max = vehicle.weight_max;
+			vehicleDto.unity_weight = vehicle.unity_weight;
 			vehicleDto.axis_total = vehicle.axis_total;
-			vehicleDto.unity_measurement_weight = vehicle.unity_measurement_weight;
-			vehicleDto.people_transport = vehicle.people_transport; 
-			vehicleDto.people = vehicle.people;
+			vehicleDto.people_max = vehicle.people_max;
+			vehicleDto.height_dimension_max = vehicle.height_dimension_max;
+			vehicleDto.width_dimension_max = vehicle.width_dimension_max;
+			vehicleDto.length_dimension_max = vehicle.length_dimension_max;
+			vehicleDto.fuel_type = vehicle.fuel_type;
+			vehicleDto.fuel_consumption = vehicle.fuel_consumption;
+			vehicleDto.bodywork_vehicle = vehicle.bodywork_vehicle;
 			vehicleDto_L.add(vehicleDto);
 		}
 		return vehicleDto_L;

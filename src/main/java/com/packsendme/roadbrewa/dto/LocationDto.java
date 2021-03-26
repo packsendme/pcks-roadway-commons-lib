@@ -25,16 +25,20 @@ public class LocationDto implements Serializable{
 	public String id;
 	public String codCountry;
 	public String countryName;
+	public String countryShortName;
+	public String identifier;
 	public boolean citySpecify;
-	public List<String> cities;
+	public List<String> cities = new ArrayList<String>(); 
 	
 	
 
 
-	public LocationDto(String codCountry, String countryName, boolean citySpecify, List<String> cities) {
+	public LocationDto(String codCountry, String countryShortName, String countryName, String identifier, boolean citySpecify, List<String> cities) {
 		super();
 		this.codCountry = codCountry;
+		this.countryShortName = countryShortName;
 		this.countryName = countryName;
+		this.identifier = identifier;
 		this.citySpecify = citySpecify;
 		this.cities = cities;
 	}
@@ -56,10 +60,11 @@ public class LocationDto implements Serializable{
 			entity = new Location();
 		}
 		entity.codCountry = locationDto.codCountry;
+		entity.countryShortName = locationDto.countryShortName;
 		entity.countryName = locationDto.countryName;
+		entity.identifier = locationDto.identifier;
 		entity.citySpecify = locationDto.citySpecify;
-		System.out.println(" TAMANHO LISTA SAVE "+ locationDto.cities);
-
+		entity.cities = new ArrayList<String>();
 		if(locationDto.citySpecify == true) {
 			for(String city : locationDto.cities) {
 				entity.cities.add(city);
@@ -73,11 +78,12 @@ public class LocationDto implements Serializable{
 		LocationDto locationDto = null;
 		
 		for(Location l : location_L) {
-			System.out.println(" TAMANHO LISTA LIST "+ l.cities.size());
 			locationDto = new LocationDto();
 			locationDto.id = l.id;
 			locationDto.codCountry = l.codCountry;
+			locationDto.countryShortName = l.countryShortName;
 			locationDto.countryName = l.countryName;
+			locationDto.identifier = l.identifier;
 			locationDto.citySpecify = l.citySpecify;
 			if(locationDto.citySpecify == true) {
 				for(String city : l.cities) {
