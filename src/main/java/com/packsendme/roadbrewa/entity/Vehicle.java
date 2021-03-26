@@ -44,6 +44,7 @@ public class Vehicle implements Serializable{
 	public Double length_dimension_max;
 	
 	//Fuel Consumption
+	public String fuel_type;
 	public Double fuel_consumption;
 
 	public String bodywork_vehicle;
@@ -52,7 +53,7 @@ public class Vehicle implements Serializable{
 	public Vehicle(String category_vehicle, String type_vehicle, String classification_vehicle, String subclassification_vehicle,
 			String transport_type, Double weight_max, Map<Integer, String> unity_weight, Integer axis_total,
 			Integer people_max, Double height_dimension_max, Double width_dimension_max, Double length_dimension_max,
-			Double fuel_consumption, String bodywork_vehicle) {
+			String fuel_type, Double fuel_consumption, String bodywork_vehicle) {
 		super();
 		this.category_vehicle = category_vehicle;
 		this.type_vehicle = type_vehicle;
@@ -66,6 +67,7 @@ public class Vehicle implements Serializable{
 		this.height_dimension_max = height_dimension_max;
 		this.width_dimension_max = width_dimension_max;
 		this.length_dimension_max = length_dimension_max;
+		this.fuel_type = fuel_type;
 		this.fuel_consumption = fuel_consumption;
 		this.bodywork_vehicle = bodywork_vehicle;
 	}

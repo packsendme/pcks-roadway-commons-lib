@@ -83,7 +83,7 @@ public class CategoryDto implements Serializable{
 				for(Vehicle v : categoryEntity.vehicles) {
 				VehicleDto vehicleDto = new VehicleDto(v.category_vehicle, v.type_vehicle, v.classification_vehicle, v.subclassification_vehicle,
 				v.transport_type, v.weight_max, v.unity_weight, v.axis_total, v.people_max, v.height_dimension_max, v.width_dimension_max, 
-				v.length_dimension_max, v.fuel_consumption,v.bodywork_vehicle);
+				v.length_dimension_max, v.type_vehicle, v.fuel_consumption,v.bodywork_vehicle);
 				vehiclesDTO_L.add(vehicleDto);
 				vehicleDto = null;
 				}
@@ -117,7 +117,7 @@ public class CategoryDto implements Serializable{
 			for(VehicleDto v : categoryDto.vehicles) {
 				vehicle = new Vehicle(v.category_vehicle, v.type_vehicle, v.classification_vehicle, v.subclassification_vehicle,
 				v.transport_type, v.weight_max, v.unity_weight, v.axis_total, v.people_max, v.height_dimension_max, v.width_dimension_max, 
-				v.length_dimension_max,v.fuel_consumption,v.bodywork_vehicle);
+				v.length_dimension_max, v.type_vehicle, v.fuel_consumption,v.bodywork_vehicle);
 				vehicleL.add(vehicle);
 				vehicle = null;
 			}
