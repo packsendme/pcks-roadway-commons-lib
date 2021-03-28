@@ -140,6 +140,7 @@ public class RoadwayDto implements Serializable{
 						costs.heightDimension_cost = costsDto.heightDimension_cost;
 						costs.widthDimension_cost = costsDto.heightDimension_cost;
 						costs.lengthDimension_cost = costsDto.heightDimension_cost;
+						costs.fuel_type = costsDto.fuel_type;
 						costs.average_consumption_cost = costsDto.average_consumption_cost;
 						costs.currency_symbol = costsDto.currency_symbol;
 						costs.currency = costsDto.currency;
@@ -208,6 +209,7 @@ public class RoadwayDto implements Serializable{
 						costsDto.heightDimension_cost = costs.heightDimension_cost;
 						costsDto.widthDimension_cost = costs.heightDimension_cost;
 						costsDto.lengthDimension_cost = costs.heightDimension_cost;
+						costsDto.fuel_type = costs.fuel_type;
 						costsDto.average_consumption_cost = costs.average_consumption_cost;
 						costsDto.currency_symbol = costs.currency_symbol;
 						costsDto.currency = costs.currency;

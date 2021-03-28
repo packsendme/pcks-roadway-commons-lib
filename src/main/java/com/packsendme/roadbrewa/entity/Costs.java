@@ -23,6 +23,7 @@ public class Costs implements Serializable {
 	public Double heightDimension_cost;
 	public Double widthDimension_cost;
 	public Double lengthDimension_cost;
+	public String fuel_type;
 	public Double average_consumption_cost;
 	public String currency_symbol;
 	public String currency;
@@ -32,7 +33,7 @@ public class Costs implements Serializable {
 
  	public Costs(String countryName, String vehicle, Double weight_cost, Double distance_cost, Double worktime_cost,
 			Double heightDimension_cost, Double widthDimension_cost, Double lengthDimension_cost,
-			Double average_consumption_cost, String currency_symbol, String currency, Boolean statusChange) {
+			String fuel_type, Double average_consumption_cost, String currency_symbol, String currency, Boolean statusChange) {
 		super();
 		this.countryName = countryName;
 		this.vehicle = vehicle;
@@ -42,6 +43,7 @@ public class Costs implements Serializable {
 		this.heightDimension_cost = heightDimension_cost;
 		this.widthDimension_cost = widthDimension_cost;
 		this.lengthDimension_cost = lengthDimension_cost;
+		this.fuel_type = fuel_type;
 		this.average_consumption_cost = average_consumption_cost;
 		this.currency_symbol = currency_symbol;
 		this.currency = currency;
