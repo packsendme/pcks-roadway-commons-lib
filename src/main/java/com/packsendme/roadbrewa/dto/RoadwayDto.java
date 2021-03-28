@@ -35,6 +35,7 @@ public class RoadwayDto implements Serializable{
 	public String date_change;
 	public Double fragile_cost;
 	public Double persishable_cost;
+	public Double reshipping_cost;
 	public Double operation_cost;
 	public Double employeer_cost;
 	public List<CategoryDto> categories = new ArrayList<CategoryDto>();
@@ -47,7 +48,7 @@ public class RoadwayDto implements Serializable{
 
 
 	public RoadwayDto(String id, String name_bre, String transport, String blocked_id, String date_creation,
-			String date_change, Double fragile_cost, Double persishable_cost, Double operation_cost,
+			String date_change, Double fragile_cost, Double persishable_cost, Double reshipping_cost, Double operation_cost,
 			Double employeer_cost, List<CategoryDto> categories, List<CostsDto> costs, List<LocationDto> locations,
 			String version, String status) {
 		super();
@@ -59,6 +60,7 @@ public class RoadwayDto implements Serializable{
 		this.date_change = date_change;
 		this.fragile_cost = fragile_cost;
 		this.persishable_cost = persishable_cost;
+		this.reshipping_cost = reshipping_cost; 
 		this.operation_cost = operation_cost;
 		this.employeer_cost = employeer_cost;
 		this.categories = categories;
@@ -92,7 +94,8 @@ public class RoadwayDto implements Serializable{
 		roadway.date_creation = roadwayDto.date_creation; //dateFormat.parse(roadwayBRE.date_creation);
 		roadway.date_change = roadwayDto.date_change; //dateFormat.parse(roadwayBRE.date_change);
 		roadway.fragile_cost = roadwayDto.fragile_cost; 
-		roadway.persishable_cost = roadwayDto.persishable_cost;  
+		roadway.persishable_cost = roadwayDto.persishable_cost;
+		roadway.reshipping_cost = roadwayDto.reshipping_cost;
 		roadway.operation_cost = roadwayDto.operation_cost; 
 		roadway.employeer_cost = roadwayDto.employeer_cost;
 		roadway.status = roadwayDto.status;
@@ -172,6 +175,7 @@ public class RoadwayDto implements Serializable{
 			roadwayDto.date_change = roadway.date_change;// dateFormat.format(roadwayModel_Obj.date_change);
 			roadwayDto.fragile_cost = roadway.fragile_cost; 
 			roadwayDto.persishable_cost = roadway.persishable_cost; 
+			roadwayDto.reshipping_cost = roadway.reshipping_cost;
 			roadwayDto.operation_cost = roadway.operation_cost;
 			roadwayDto.employeer_cost = roadway.employeer_cost;
 			roadwayDto.status = roadway.status;

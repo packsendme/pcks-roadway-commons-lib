@@ -31,6 +31,7 @@ public class Roadway implements Serializable {
 	public String date_change;
 	public Double fragile_cost;
 	public Double persishable_cost;
+	public Double reshipping_cost;
 	public Double operation_cost;
 	public Double employeer_cost;
 	public List<Category> categories = new ArrayList<Category>();
