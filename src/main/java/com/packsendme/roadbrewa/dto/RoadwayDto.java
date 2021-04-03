@@ -150,8 +150,8 @@ public class RoadwayDto implements Serializable{
 						costs.distance_cost = costsDto.distance_cost;
 						costs.worktime_cost = costsDto.worktime_cost;
 						costs.heightDimension_cost = costsDto.heightDimension_cost;
-						costs.widthDimension_cost = costsDto.heightDimension_cost;
-						costs.lengthDimension_cost = costsDto.heightDimension_cost;
+						costs.widthDimension_cost = costsDto.widthDimension_cost;
+						costs.lengthDimension_cost = costsDto.lengthDimension_cost;
 						costs.fuel_type = costsDto.fuel_type;
 						costs.average_consumption_cost = costsDto.average_consumption_cost;
 						costs.statusChange = costsDto.statusChange;
@@ -225,8 +225,8 @@ public class RoadwayDto implements Serializable{
 						costsDto.distance_cost = costs.distance_cost;
 						costsDto.worktime_cost = costs.worktime_cost;
 						costsDto.heightDimension_cost = costs.heightDimension_cost;
-						costsDto.widthDimension_cost = costs.heightDimension_cost;
-						costsDto.lengthDimension_cost = costs.heightDimension_cost;
+						costsDto.widthDimension_cost = costs.widthDimension_cost;
+						costsDto.lengthDimension_cost = costs.lengthDimension_cost;
 						costsDto.fuel_type = costs.fuel_type;
 						costsDto.average_consumption_cost = costs.average_consumption_cost;
 						costsDto.statusChange = costs.statusChange;
