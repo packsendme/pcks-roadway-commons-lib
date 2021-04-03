@@ -39,12 +39,12 @@ public class RoadwayDto implements Serializable{
 	public Double reshipping_cost;
 	public Double operation_cost;
 	public Double employeer_cost;
+	public String version;
+	public String status;
 	public TariffPlanDto tariffPlan = new TariffPlanDto();
 	public List<CategoryDto> categories = new ArrayList<CategoryDto>();
 	public List<CostsDto> costs = new ArrayList<CostsDto>();
 	public List<LocationDto> locations = new ArrayList<LocationDto>();
-	public String version;
-	public String status;
 	
 
 
@@ -154,8 +154,6 @@ public class RoadwayDto implements Serializable{
 						costs.lengthDimension_cost = costsDto.heightDimension_cost;
 						costs.fuel_type = costsDto.fuel_type;
 						costs.average_consumption_cost = costsDto.average_consumption_cost;
-						costs.currency_symbol = costsDto.currency_symbol;
-						costs.currency = costsDto.currency;
 						costs.statusChange = costsDto.statusChange;
 						costs_L.add(costs);
 					}
@@ -231,8 +229,6 @@ public class RoadwayDto implements Serializable{
 						costsDto.lengthDimension_cost = costs.heightDimension_cost;
 						costsDto.fuel_type = costs.fuel_type;
 						costsDto.average_consumption_cost = costs.average_consumption_cost;
-						costsDto.currency_symbol = costs.currency_symbol;
-						costsDto.currency = costs.currency;
 						costsDto.statusChange = costs.statusChange;
 						costsDto_L.add(costsDto);
 					}
