@@ -143,7 +143,7 @@ public class RoadwayDto implements Serializable{
 			for(LocationDto locationDto : roadwayDto.locations) {
 				for(CostsDto costsDto : roadwayDto.costs){
 					costs = new Costs();
-					if(locationDto.countryName.equals(costsDto.countryName)) {
+					if(locationDto.countryShortName.equals(costsDto.countryName)) {
 						costs.countryName = costsDto.countryName;
 						costs.vehicle = costsDto.vehicle;
 						costs.weight_cost = costsDto.weight_cost;
