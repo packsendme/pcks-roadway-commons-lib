@@ -158,7 +158,7 @@ public class RoadwayDto implements Serializable{
 						costs_L.add(costs);
 					}
 				}
-				costs_Map.put(locationDto.countryName, costs_L);
+				costs_Map.put(locationDto.countryShortName, costs_L);
 				costs_L = new ArrayList<Costs>();
 			}
 			roadway.costs = costs_Map;
