@@ -34,6 +34,7 @@ public class Roadway implements Serializable {
 	public Double reshipping_cost;
 	public Double operation_cost;
 	public Double employeer_cost;
+	public Double vlr_exchange;
 	public TariffPlan tariffPlan = new TariffPlan();
 	public List<Category> categories = new ArrayList<Category>();
 	public Map<String, List<Costs>> costs = new HashMap<String, List<Costs>>(); 
@@ -44,7 +45,7 @@ public class Roadway implements Serializable {
 
 
 	public Roadway(String name_bre, String transport, String blocked_id, String date_creation, String date_change,
-			Double fragile_cost, Double persishable_cost, Double operation_cost, Double employeer_cost, TariffPlan tariffPlan,
+			Double fragile_cost, Double persishable_cost, Double operation_cost, Double employeer_cost, Double vlr_exchange, TariffPlan tariffPlan,
 			List<Category> categories, Map<String, List<Costs>> costs, List<Location> locations, String version, String status) {
 		super();
 		this.name_bre = name_bre;
@@ -56,6 +57,7 @@ public class Roadway implements Serializable {
 		this.persishable_cost = persishable_cost;
 		this.operation_cost = operation_cost;
 		this.employeer_cost = employeer_cost;
+		this.vlr_exchange = vlr_exchange;
 		this.tariffPlan = tariffPlan;
 		this.categories = categories;
 		this.costs = costs;

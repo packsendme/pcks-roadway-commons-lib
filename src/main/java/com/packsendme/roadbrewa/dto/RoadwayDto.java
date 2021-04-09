@@ -41,6 +41,7 @@ public class RoadwayDto implements Serializable{
 	public Double employeer_cost;
 	public String version;
 	public String status;
+	public Double vlr_exchange;
 	public TariffPlanDto tariffPlan = new TariffPlanDto();
 	public List<CategoryDto> categories = new ArrayList<CategoryDto>();
 	public List<CostsDto> costs = new ArrayList<CostsDto>();
@@ -51,7 +52,7 @@ public class RoadwayDto implements Serializable{
 
 	public RoadwayDto(String id, String name_bre, String transport, String blocked_id, String date_creation,
 			String date_change, Double fragile_cost, Double persishable_cost, Double reshipping_cost, Double operation_cost,
-			Double employeer_cost, TariffPlanDto tariffPlan, List<CategoryDto> categories, List<CostsDto> costs, List<LocationDto> locations,
+			Double employeer_cost, Double vlr_exchange, TariffPlanDto tariffPlan, List<CategoryDto> categories, List<CostsDto> costs, List<LocationDto> locations,
 			String version, String status) {
 		super();
 		this.id = id;
@@ -65,6 +66,7 @@ public class RoadwayDto implements Serializable{
 		this.reshipping_cost = reshipping_cost; 
 		this.operation_cost = operation_cost;
 		this.employeer_cost = employeer_cost;
+		this.vlr_exchange = vlr_exchange;
 		this.tariffPlan = tariffPlan;
 		this.categories = categories;
 		this.costs = costs;
@@ -103,6 +105,7 @@ public class RoadwayDto implements Serializable{
 		roadway.employeer_cost = roadwayDto.employeer_cost;
 		roadway.status = roadwayDto.status;
 		roadway.version = roadwayDto.version;
+		roadway.vlr_exchange = roadwayDto.vlr_exchange; 
 
 		// TariffPlan-Entity
 		TariffPlan tariffPlan = new TariffPlan(roadwayDto.tariffPlan.weight_plan, roadwayDto.tariffPlan.distance_plan, roadwayDto.tariffPlan.worktime_plan, 
@@ -187,6 +190,7 @@ public class RoadwayDto implements Serializable{
 			roadwayDto.employeer_cost = roadway.employeer_cost;
 			roadwayDto.status = roadway.status;
 			roadwayDto.version = roadway.version;
+			roadwayDto.vlr_exchange = roadway.vlr_exchange; 
 			
 			// TariffPlan-Entity
 			TariffPlanDto tariffPlanDto = new TariffPlanDto(roadway.tariffPlan.weight_plan, roadway.tariffPlan.distance_plan, roadway.tariffPlan.worktime_plan, 
