@@ -25,19 +25,30 @@ public class TransportDto implements Serializable{
 	public String identifier;
 	public String initials;
 	public String transport_type;
+	public String coditions;
+	public Double weight_max;
+	public Double heightDimension_max;
+	public Double widthDimension_max;
+	public Double lengthDimension_max;
 	public TariffPlanDto tariffPlan = new TariffPlanDto();
 
 
 
 
 	public TransportDto(String id, String name_transport, String identifier, String initials, String transport_type,
-			TariffPlanDto tariffPlan) {
+			String coditions, Double weight_max, Double heightDimension_max, Double widthDimension_max,
+			Double lengthDimension_max, TariffPlanDto tariffPlan) {
 		super();
 		this.id = id;
 		this.name_transport = name_transport;
 		this.identifier = identifier;
 		this.initials = initials;
 		this.transport_type = transport_type;
+		this.coditions = coditions;
+		this.weight_max = weight_max;
+		this.heightDimension_max = heightDimension_max;
+		this.widthDimension_max = widthDimension_max;
+		this.lengthDimension_max = lengthDimension_max;
 		this.tariffPlan = tariffPlan;
 	}
 
@@ -59,6 +70,11 @@ public class TransportDto implements Serializable{
 		entity.identifier = tranportDTO.identifier;
 		entity.initials = tranportDTO.initials;
 		entity.transport_type = tranportDTO.transport_type;
+		entity.coditions = tranportDTO.coditions;
+		entity.weight_max = tranportDTO.weight_max;
+		entity.heightDimension_max = tranportDTO.heightDimension_max;
+		entity.widthDimension_max = tranportDTO.widthDimension_max;
+		entity.lengthDimension_max = tranportDTO.lengthDimension_max;
 
 		// TariffPlan-Entity
 		TariffPlan tariffPlan = new TariffPlan(tranportDTO.tariffPlan.weight_plan, tranportDTO.tariffPlan.distance_plan, tranportDTO.tariffPlan.worktime_plan, 
@@ -79,7 +95,12 @@ public class TransportDto implements Serializable{
 			transportDto.identifier = transport.identifier;
 			transportDto.initials = transport.initials;
 			transportDto.transport_type = transport.transport_type;
-			
+			transportDto.coditions = transport.coditions;
+			transportDto.weight_max = transport.weight_max;
+			transportDto.heightDimension_max = transport.heightDimension_max;
+			transportDto.widthDimension_max = transport.widthDimension_max;
+			transportDto.lengthDimension_max = transport.lengthDimension_max;
+
 			// TariffPlan-Entity
 			TariffPlanDto tariffPlanDto = new TariffPlanDto(transport.tariffPlan.weight_plan, transport.tariffPlan.distance_plan, transport.tariffPlan.worktime_plan, 
 					transport.tariffPlan.fuelconsumption_plan, transport.tariffPlan.tolls_plan, transport.tariffPlan.dimension_plan, transport.tariffPlan.antt_plan, 
