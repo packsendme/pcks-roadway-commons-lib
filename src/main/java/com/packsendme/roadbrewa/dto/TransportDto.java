@@ -2,7 +2,9 @@ package com.packsendme.roadbrewa.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.packsendme.roadbrewa.component.RoadwayManagerConstants;
 import com.packsendme.roadbrewa.entity.TariffPlan;
@@ -28,17 +30,19 @@ public class TransportDto implements Serializable{
 	public Boolean restriction;
 	public String coditions;
 	public Double weight_max;
+	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public Double heightDimension_max;
 	public Double widthDimension_max;
 	public Double lengthDimension_max;
 	public TariffPlanDto tariffPlan = new TariffPlanDto();
 
+ 
 
-	public TransportDto(String id, String name_transport, String identifier, String initials, String transport_type,
-			Boolean restriction, String coditions, Double weight_max, Double heightDimension_max,
-			Double widthDimension_max, Double lengthDimension_max, TariffPlanDto tariffPlan) {
+	public TransportDto(String name_transport, String identifier, String initials, String transport_type,
+			Boolean restriction, String coditions, Double weight_max, Map<Integer, String> unity_weight,
+			Double heightDimension_max, Double widthDimension_max, Double lengthDimension_max,
+			TariffPlanDto tariffPlan) {
 		super();
-		this.id = id;
 		this.name_transport = name_transport;
 		this.identifier = identifier;
 		this.initials = initials;
@@ -46,6 +50,7 @@ public class TransportDto implements Serializable{
 		this.restriction = restriction;
 		this.coditions = coditions;
 		this.weight_max = weight_max;
+		this.unity_weight = unity_weight;
 		this.heightDimension_max = heightDimension_max;
 		this.widthDimension_max = widthDimension_max;
 		this.lengthDimension_max = lengthDimension_max;
@@ -73,6 +78,7 @@ public class TransportDto implements Serializable{
 		entity.restriction = transportDTO.restriction;
 		entity.coditions = transportDTO.coditions;
 		entity.weight_max = transportDTO.weight_max;
+		entity.unity_weight = transportDTO.unity_weight;
 		entity.heightDimension_max = transportDTO.heightDimension_max;
 		entity.widthDimension_max = transportDTO.widthDimension_max;
 		entity.lengthDimension_max = transportDTO.lengthDimension_max;
@@ -99,6 +105,7 @@ public class TransportDto implements Serializable{
 			transportDto.restriction = transport.restriction;
 			transportDto.coditions = transport.coditions;
 			transportDto.weight_max = transport.weight_max;
+			transportDto.unity_weight = transport.unity_weight;
 			transportDto.heightDimension_max = transport.heightDimension_max;
 			transportDto.widthDimension_max = transport.widthDimension_max;
 			transportDto.lengthDimension_max = transport.lengthDimension_max;

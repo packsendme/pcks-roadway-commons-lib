@@ -1,6 +1,8 @@
 package com.packsendme.roadbrewa.entity;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -27,15 +29,20 @@ public class Transport implements Serializable{
 	public Boolean restriction;
 	public String coditions;
 	public Double weight_max;
+	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public Double heightDimension_max;
 	public Double widthDimension_max;
 	public Double lengthDimension_max;
 
 	public TariffPlan tariffPlan = new TariffPlan();
 
+
+
+
+
 	public Transport(String id, String name_transport, String identifier, String initials, String transport_type,
-			Boolean restriction, String coditions, Double weight_max, Double heightDimension_max,
-			Double widthDimension_max, Double lengthDimension_max, TariffPlan tariffPlan) {
+			Boolean restriction, String coditions, Double weight_max, Map<Integer, String> unity_weight,
+			Double heightDimension_max, Double widthDimension_max, Double lengthDimension_max, TariffPlan tariffPlan) {
 		super();
 		this.id = id;
 		this.name_transport = name_transport;
@@ -45,11 +52,13 @@ public class Transport implements Serializable{
 		this.restriction = restriction;
 		this.coditions = coditions;
 		this.weight_max = weight_max;
+		this.unity_weight = unity_weight;
 		this.heightDimension_max = heightDimension_max;
 		this.widthDimension_max = widthDimension_max;
 		this.lengthDimension_max = lengthDimension_max;
 		this.tariffPlan = tariffPlan;
 	}
+
 
 
 
