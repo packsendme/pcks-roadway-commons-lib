@@ -78,7 +78,11 @@ public class TransportDto implements Serializable{
 		entity.restriction = transportDTO.restriction;
 		entity.coditions = transportDTO.coditions;
 		entity.weight_max = transportDTO.weight_max;
-		entity.unity_weight = transportDTO.unity_weight;
+		
+		if(transportDTO.unity_weight.get(0) == "0") {
+			entity.unity_weight = null;
+		}
+		
 		entity.heightDimension_max = transportDTO.heightDimension_max;
 		entity.widthDimension_max = transportDTO.widthDimension_max;
 		entity.lengthDimension_max = transportDTO.lengthDimension_max;
