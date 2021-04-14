@@ -25,6 +25,7 @@ public class TransportDto implements Serializable{
 	public String identifier;
 	public String initials;
 	public String transport_type;
+	public Boolean restriction;
 	public String coditions;
 	public Double weight_max;
 	public Double heightDimension_max;
@@ -33,17 +34,16 @@ public class TransportDto implements Serializable{
 	public TariffPlanDto tariffPlan = new TariffPlanDto();
 
 
-
-
 	public TransportDto(String id, String name_transport, String identifier, String initials, String transport_type,
-			String coditions, Double weight_max, Double heightDimension_max, Double widthDimension_max,
-			Double lengthDimension_max, TariffPlanDto tariffPlan) {
+			Boolean restriction, String coditions, Double weight_max, Double heightDimension_max,
+			Double widthDimension_max, Double lengthDimension_max, TariffPlanDto tariffPlan) {
 		super();
 		this.id = id;
 		this.name_transport = name_transport;
 		this.identifier = identifier;
 		this.initials = initials;
 		this.transport_type = transport_type;
+		this.restriction = restriction;
 		this.coditions = coditions;
 		this.weight_max = weight_max;
 		this.heightDimension_max = heightDimension_max;
@@ -62,24 +62,25 @@ public class TransportDto implements Serializable{
 	 * ==============================================
 	 */
 	
-	public Transport dtoTOentity(TransportDto tranportDTO, Transport entity, String typeOperation) {
+	public Transport dtoTOentity(TransportDto transportDTO, Transport entity, String typeOperation) {
 		if(typeOperation.equals(RoadwayManagerConstants.ADD_OP_ROADWAY)) {
 			entity = new Transport();
 		}
-		entity.name_transport = tranportDTO.name_transport;
-		entity.identifier = tranportDTO.identifier;
-		entity.initials = tranportDTO.initials;
-		entity.transport_type = tranportDTO.transport_type;
-		entity.coditions = tranportDTO.coditions;
-		entity.weight_max = tranportDTO.weight_max;
-		entity.heightDimension_max = tranportDTO.heightDimension_max;
-		entity.widthDimension_max = tranportDTO.widthDimension_max;
-		entity.lengthDimension_max = tranportDTO.lengthDimension_max;
+		entity.name_transport = transportDTO.name_transport;
+		entity.identifier = transportDTO.identifier;
+		entity.initials = transportDTO.initials;
+		entity.transport_type = transportDTO.transport_type;
+		entity.restriction = transportDTO.restriction;
+		entity.coditions = transportDTO.coditions;
+		entity.weight_max = transportDTO.weight_max;
+		entity.heightDimension_max = transportDTO.heightDimension_max;
+		entity.widthDimension_max = transportDTO.widthDimension_max;
+		entity.lengthDimension_max = transportDTO.lengthDimension_max;
 
 		// TariffPlan-Entity
-		TariffPlan tariffPlan = new TariffPlan(tranportDTO.tariffPlan.weight_plan, tranportDTO.tariffPlan.distance_plan, tranportDTO.tariffPlan.worktime_plan, 
-				tranportDTO.tariffPlan.fuelconsumption_plan, tranportDTO.tariffPlan.tolls_plan, tranportDTO.tariffPlan.dimension_plan, tranportDTO.tariffPlan.antt_plan, 
-				tranportDTO.tariffPlan.fragile_plan, tranportDTO.tariffPlan.persishable_plan, tranportDTO.tariffPlan.reshipping_plan); 
+		TariffPlan tariffPlan = new TariffPlan(transportDTO.tariffPlan.weight_plan, transportDTO.tariffPlan.distance_plan, transportDTO.tariffPlan.worktime_plan, 
+				transportDTO.tariffPlan.fuelconsumption_plan, transportDTO.tariffPlan.tolls_plan, transportDTO.tariffPlan.dimension_plan, transportDTO.tariffPlan.antt_plan, 
+				transportDTO.tariffPlan.fragile_plan, transportDTO.tariffPlan.persishable_plan, transportDTO.tariffPlan.reshipping_plan); 
 		entity.tariffPlan = tariffPlan;
 		
 		return entity;
@@ -95,6 +96,7 @@ public class TransportDto implements Serializable{
 			transportDto.identifier = transport.identifier;
 			transportDto.initials = transport.initials;
 			transportDto.transport_type = transport.transport_type;
+			transportDto.restriction = transport.restriction;
 			transportDto.coditions = transport.coditions;
 			transportDto.weight_max = transport.weight_max;
 			transportDto.heightDimension_max = transport.heightDimension_max;
