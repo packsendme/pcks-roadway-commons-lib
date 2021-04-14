@@ -29,7 +29,9 @@ public class Vehicle implements Serializable{
 	public String classification_vehicle;
 	public String subclassification_vehicle;
 	public String transport_type;
-
+	public Boolean restriction;
+	public Double distance_max;
+	
 	// Weight
 	public Double weight_max;
 	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
@@ -50,16 +52,21 @@ public class Vehicle implements Serializable{
 	public String bodywork_vehicle;
 	
 
-	public Vehicle(String category_vehicle, String type_vehicle, String classification_vehicle, String subclassification_vehicle,
-			String transport_type, Double weight_max, Map<Integer, String> unity_weight, Integer axis_total,
-			Integer people_max, Double height_dimension_max, Double width_dimension_max, Double length_dimension_max,
-			String fuel_type, Double fuel_consumption, String bodywork_vehicle) {
+
+
+	public Vehicle(String category_vehicle, String type_vehicle, String classification_vehicle,
+			String subclassification_vehicle, String transport_type, Boolean restriction, Double distance_max,
+			Double weight_max, Map<Integer, String> unity_weight, Integer axis_total, Integer people_max,
+			Double height_dimension_max, Double width_dimension_max, Double length_dimension_max, String fuel_type,
+			Double fuel_consumption, String bodywork_vehicle) {
 		super();
 		this.category_vehicle = category_vehicle;
 		this.type_vehicle = type_vehicle;
 		this.classification_vehicle = classification_vehicle;
 		this.subclassification_vehicle = subclassification_vehicle;
 		this.transport_type = transport_type;
+		this.restriction = restriction;
+		this.distance_max = distance_max;
 		this.weight_max = weight_max;
 		this.unity_weight = unity_weight;
 		this.axis_total = axis_total;
@@ -71,6 +78,8 @@ public class Vehicle implements Serializable{
 		this.fuel_consumption = fuel_consumption;
 		this.bodywork_vehicle = bodywork_vehicle;
 	}
+
+
 
 
 	public Vehicle() {
