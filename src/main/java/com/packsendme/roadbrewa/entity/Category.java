@@ -28,7 +28,8 @@ public class Category implements Serializable{
 	public String name_category;
 	public String initials;
 	public String transport;
-	public Double weight_max;
+	public String weightUnityVehicle_max;
+	public String weightUnityTransport_max;
 	public Integer people_max;
 	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public List<Vehicle> vehicles = new ArrayList<Vehicle>(); 
@@ -36,13 +37,14 @@ public class Category implements Serializable{
 	public Date dt_update;
 	
 
-	public Category(String name_category, String initials, String transport, Double weight_max, Integer people_max,
+	public Category(String name_category, String initials, String transport, String weightUnityVehicle_max, String weightUnityTransport_max, Integer people_max,
 			Map<Integer, String> unity_weight, List<Vehicle> vehicles, Date dt_inc, Date dt_update) {
 		super();
 		this.name_category = name_category;
 		this.initials = initials;
 		this.transport = transport;
-		this.weight_max = weight_max;
+		this.weightUnityVehicle_max = weightUnityVehicle_max;
+		this.weightUnityTransport_max = weightUnityTransport_max;
 		this.people_max = people_max;
 		this.unity_weight = unity_weight;
 		this.vehicles = vehicles;

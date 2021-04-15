@@ -27,7 +27,8 @@ public class CategoryDto implements Serializable{
 	public String name_category;
 	public String initials;
 	public String transport;
-	public Double weight_max;
+	public String weightUnityVehicle_max;
+	public String weightUnityTransport_max;
 	public Integer people_max;
 	public Map<Integer, String> unity_weight = new HashMap<Integer, String>();
 	public List<VehicleDto> vehicles = new ArrayList<VehicleDto>(); 
@@ -35,13 +36,14 @@ public class CategoryDto implements Serializable{
 	public Date dt_update;
 
 
-	public CategoryDto(String name_category, String initials, String transport, Double weight_max, Integer people_max, 
-			Map<Integer, String> unity_weight, List<VehicleDto> vehicles, Date dt_inc, Date dt_update) {
+	public CategoryDto(String name_category, String initials, String transport, String weightUnityVehicle_max, String weightUnityTransport_max,
+			Integer people_max, Map<Integer, String> unity_weight, List<VehicleDto> vehicles, Date dt_inc, Date dt_update) {
 		super();
 		this.name_category = name_category;
 		this.initials = initials;
 		this.transport = transport;
-		this.weight_max = weight_max;
+		this.weightUnityVehicle_max = weightUnityVehicle_max;
+		this.weightUnityTransport_max = weightUnityTransport_max;
 		this.people_max = people_max;
 		this.unity_weight = unity_weight;
 		this.vehicles = vehicles;
@@ -71,7 +73,8 @@ public class CategoryDto implements Serializable{
 			categoryDTO.name_category = categoryEntity.name_category;
 			categoryDTO.initials = categoryEntity.initials;
 			categoryDTO.transport = categoryEntity.transport;
-			categoryDTO.weight_max = categoryEntity.weight_max;
+			categoryDTO.weightUnityVehicle_max = categoryEntity.weightUnityVehicle_max;
+			categoryDTO.weightUnityTransport_max = categoryEntity.weightUnityTransport_max;
 			categoryDTO.people_max = categoryEntity.people_max;
 			categoryDTO.unity_weight = categoryEntity.unity_weight;
 			categoryDTO.dt_inc = categoryEntity.dt_inc;
@@ -104,7 +107,8 @@ public class CategoryDto implements Serializable{
 		category.name_category = categoryDto.name_category;
 		category.initials = categoryDto.initials;
 		category.transport = categoryDto.transport;
-		category.weight_max = categoryDto.weight_max;
+		category.weightUnityVehicle_max = categoryDto.weightUnityVehicle_max;
+		category.weightUnityTransport_max = categoryDto.weightUnityTransport_max;
 		category.people_max = categoryDto.people_max;
 		category.unity_weight = categoryDto.unity_weight;
 		category.dt_inc = categoryDto.dt_inc;
