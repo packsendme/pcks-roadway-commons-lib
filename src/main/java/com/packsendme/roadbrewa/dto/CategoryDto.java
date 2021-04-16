@@ -9,6 +9,8 @@ import java.util.Map;
 
 import com.packsendme.roadbrewa.component.RoadwayManagerConstants;
 import com.packsendme.roadbrewa.entity.Category;
+import com.packsendme.roadbrewa.entity.TariffPlan;
+import com.packsendme.roadbrewa.entity.Transport;
 import com.packsendme.roadbrewa.entity.Vehicle;
 
 import lombok.Getter;
@@ -26,7 +28,7 @@ public class CategoryDto implements Serializable{
 	public String id;
 	public String name_category;
 	public String initials;
-	public String transport;
+	public TransportDto transport = new TransportDto();
 	public String weightUnityVehicle_max;
 	public String weightUnityTransport_max;
 	public Integer people_max;
@@ -36,8 +38,12 @@ public class CategoryDto implements Serializable{
 	public Date dt_update;
 
 
-	public CategoryDto(String name_category, String initials, String transport, String weightUnityVehicle_max, String weightUnityTransport_max,
-			Integer people_max, Map<Integer, String> unity_weight, List<VehicleDto> vehicles, Date dt_inc, Date dt_update) {
+ 
+
+
+	public CategoryDto(String name_category, String initials, TransportDto transport, String weightUnityVehicle_max,
+			String weightUnityTransport_max, Integer people_max, Map<Integer, String> unity_weight,
+			List<VehicleDto> vehicles, Date dt_inc, Date dt_update) {
 		super();
 		this.name_category = name_category;
 		this.initials = initials;
@@ -72,7 +78,6 @@ public class CategoryDto implements Serializable{
 			categoryDTO.id = categoryEntity.id;
 			categoryDTO.name_category = categoryEntity.name_category;
 			categoryDTO.initials = categoryEntity.initials;
-			categoryDTO.transport = categoryEntity.transport;
 			categoryDTO.weightUnityVehicle_max = categoryEntity.weightUnityVehicle_max;
 			categoryDTO.weightUnityTransport_max = categoryEntity.weightUnityTransport_max;
 			categoryDTO.people_max = categoryEntity.people_max;
@@ -80,6 +85,19 @@ public class CategoryDto implements Serializable{
 			categoryDTO.dt_inc = categoryEntity.dt_inc;
 			categoryDTO.dt_update = categoryEntity.dt_update;
 			
+			TariffPlanDto tariffPlanDto = new TariffPlanDto(categoryEntity.transport.tariffPlan.weight_plan, categoryEntity.transport.tariffPlan.distance_plan, 
+					categoryEntity.transport.tariffPlan.worktime_plan, categoryEntity.transport.tariffPlan.fuelconsumption_plan, categoryEntity.transport.tariffPlan.tolls_plan, 
+					categoryEntity.transport.tariffPlan.dimension_plan, categoryEntity.transport.tariffPlan.antt_plan, categoryEntity.transport.tariffPlan.fragile_plan, 
+					categoryEntity.transport.tariffPlan.persishable_plan, categoryEntity.transport.tariffPlan.reshipping_plan);
+			
+			TransportDto transportDto = new TransportDto(categoryEntity.transport.name_transport, categoryEntity.transport.identifier, categoryEntity.transport.initials,
+					categoryEntity.transport.transport_type, categoryEntity.transport.restriction, categoryEntity.transport.coditions, categoryEntity.transport.weight_max,
+					categoryEntity.transport.unity_weight, categoryEntity.transport.heightDimension_max, categoryEntity.transport.widthDimension_max, 
+					categoryEntity.transport.lengthDimension_max, tariffPlanDto);
+
+			categoryDTO.transport = transportDto; 
+			
+ 
 			// Category-Vehicle
 			List<VehicleDto> vehiclesDTO_L = new ArrayList<VehicleDto>();
 			if(categoryEntity.vehicles.size() >= 1) {
@@ -106,13 +124,25 @@ public class CategoryDto implements Serializable{
 		// Category-Head
 		category.name_category = categoryDto.name_category;
 		category.initials = categoryDto.initials;
-		category.transport = categoryDto.transport;
 		category.weightUnityVehicle_max = categoryDto.weightUnityVehicle_max;
 		category.weightUnityTransport_max = categoryDto.weightUnityTransport_max;
 		category.people_max = categoryDto.people_max;
 		category.unity_weight = categoryDto.unity_weight;
 		category.dt_inc = categoryDto.dt_inc;
 		category.dt_update = categoryDto.dt_update;
+		
+		TariffPlan tariffPlan = new TariffPlan(categoryDto.transport.tariffPlan.weight_plan, categoryDto.transport.tariffPlan.distance_plan, 
+				categoryDto.transport.tariffPlan.worktime_plan, categoryDto.transport.tariffPlan.fuelconsumption_plan, categoryDto.transport.tariffPlan.tolls_plan, 
+				categoryDto.transport.tariffPlan.dimension_plan, categoryDto.transport.tariffPlan.antt_plan, categoryDto.transport.tariffPlan.fragile_plan, 
+				categoryDto.transport.tariffPlan.persishable_plan, categoryDto.transport.tariffPlan.reshipping_plan);
+		
+		Transport transport = new Transport(categoryDto.transport.name_transport, categoryDto.transport.identifier, categoryDto.transport.initials,
+				categoryDto.transport.transport_type, categoryDto.transport.restriction, categoryDto.transport.coditions, categoryDto.transport.weight_max,
+				categoryDto.transport.unity_weight, categoryDto.transport.heightDimension_max, categoryDto.transport.widthDimension_max, 
+				categoryDto.transport.lengthDimension_max, tariffPlan);
+
+		category.transport = transport; 
+
 		
 		// Category-Vehicle
 		List<Vehicle> vehicleL = new ArrayList<Vehicle>();

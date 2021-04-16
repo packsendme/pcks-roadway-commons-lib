@@ -40,11 +40,10 @@ public class Transport implements Serializable{
 
 
 
-	public Transport(String id, String name_transport, String identifier, String initials, String transport_type,
+	public Transport(String name_transport, String identifier, String initials, String transport_type,
 			Boolean restriction, String coditions, Double weight_max, Map<Integer, String> unity_weight,
 			Double heightDimension_max, Double widthDimension_max, Double lengthDimension_max, TariffPlan tariffPlan) {
 		super();
-		this.id = id;
 		this.name_transport = name_transport;
 		this.identifier = identifier;
 		this.initials = initials;
