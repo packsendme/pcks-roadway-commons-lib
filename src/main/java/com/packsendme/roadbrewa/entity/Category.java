@@ -15,7 +15,7 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-@Document(collection = "pcks_roadbrewa_category")
+@Document(collection = "pcks_roadbrewa_categorybre")
 public class Category implements Serializable{
 
 	/**
