@@ -14,7 +14,7 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-@Document(collection = "pcks_roadbrewa_roadway")
+@Document(collection = "pcks_roadbrewa_roadwaybre")
 public class Roadway implements Serializable {
 	
 	/**
