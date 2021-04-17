@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Getter;
@@ -25,6 +26,7 @@ public class Transport implements Serializable{
 	public String name_transport;
 	public String identifier;
 	public String initials;
+	//@DBRef(lazy = true)
 	public String transport_type;
 	public Boolean restriction;
 	public String coditions;
