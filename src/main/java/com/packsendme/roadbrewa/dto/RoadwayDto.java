@@ -15,6 +15,7 @@ import com.packsendme.roadbrewa.entity.Costs;
 import com.packsendme.roadbrewa.entity.Location;
 import com.packsendme.roadbrewa.entity.Roadway;
 import com.packsendme.roadbrewa.entity.TariffPlan;
+import com.packsendme.roadbrewa.entity.Transport;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -30,7 +31,7 @@ public class RoadwayDto implements Serializable{
 	
 	public String id;
 	public String name_bre;
-	public String transport;
+	public String transport_name;
 	public String blocked_id;
 	public String date_creation;
 	public String date_change;
@@ -42,6 +43,7 @@ public class RoadwayDto implements Serializable{
 	public String version;
 	public String status;
 	public Double vlr_exchange;
+	public TransportDto transport = new TransportDto();
 	public TariffPlanDto tariffPlan = new TariffPlanDto();
 	public List<CategoryDto> categories = new ArrayList<CategoryDto>();
 	public List<CostsDto> costs = new ArrayList<CostsDto>();
@@ -50,14 +52,14 @@ public class RoadwayDto implements Serializable{
 
 
 
-	public RoadwayDto(String id, String name_bre, String transport, String blocked_id, String date_creation,
+	public RoadwayDto(String id, String name_bre, String transport_name, String blocked_id, String date_creation,
 			String date_change, Double fragile_cost, Double persishable_cost, Double reshipping_cost, Double operation_cost,
-			Double employeer_cost, Double vlr_exchange, TariffPlanDto tariffPlan, List<CategoryDto> categories, List<CostsDto> costs, List<LocationDto> locations,
+			Double employeer_cost, Double vlr_exchange, TransportDto transport, TariffPlanDto tariffPlan, List<CategoryDto> categories, List<CostsDto> costs, List<LocationDto> locations,
 			String version, String status) {
 		super();
 		this.id = id;
 		this.name_bre = name_bre;
-		this.transport = transport;
+		this.transport_name = transport_name;
 		this.blocked_id = blocked_id;
 		this.date_creation = date_creation;
 		this.date_change = date_change;
@@ -67,6 +69,7 @@ public class RoadwayDto implements Serializable{
 		this.operation_cost = operation_cost;
 		this.employeer_cost = employeer_cost;
 		this.vlr_exchange = vlr_exchange;
+		this.transport = transport;
 		this.tariffPlan = tariffPlan;
 		this.categories = categories;
 		this.costs = costs;
@@ -94,7 +97,7 @@ public class RoadwayDto implements Serializable{
 		}
 		
 		roadway.name_bre = roadwayDto.name_bre;
-		roadway.transport = roadwayDto.transport;
+		roadway.transport_name = roadwayDto.transport_name;
 		roadway.blocked_id = roadwayDto.blocked_id;
 		roadway.date_creation = roadwayDto.date_creation; //dateFormat.parse(roadwayBRE.date_creation);
 		roadway.date_change = roadwayDto.date_change; //dateFormat.parse(roadwayBRE.date_change);
@@ -112,6 +115,15 @@ public class RoadwayDto implements Serializable{
 				roadwayDto.tariffPlan.fuelconsumption_plan, roadwayDto.tariffPlan.tolls_plan, roadwayDto.tariffPlan.dimension_plan, roadwayDto.tariffPlan.antt_plan, 
 				roadwayDto.tariffPlan.fragile_plan, roadwayDto.tariffPlan.persishable_plan, roadwayDto.tariffPlan.reshipping_plan); 
 		roadway.tariffPlan = tariffPlan; 
+		
+		
+		// Transport-Entity
+		Transport transport = new Transport(roadwayDto.transport.name_transport, roadwayDto.transport.identifier, roadwayDto.transport.initials,
+				roadwayDto.transport.transport_type, roadwayDto.transport.restriction, roadwayDto.transport.coditions, roadwayDto.transport.weight_max,
+				roadwayDto.transport.unity_weight, roadwayDto.transport.heightDimension_max, roadwayDto.transport.widthDimension_max, 
+				roadwayDto.transport.lengthDimension_max, tariffPlan);
+		roadway.transport = transport; 
+		
 	
 		// CATEGORY-Entity
 		List<Category> categoriesL = new ArrayList<Category>();
@@ -179,7 +191,7 @@ public class RoadwayDto implements Serializable{
 			roadwayDto = new RoadwayDto(); 
 			roadwayDto.id = roadway.id;
 			roadwayDto.name_bre = roadway.name_bre;
-			roadwayDto.transport = roadway.transport;
+			roadwayDto.transport_name = roadway.transport_name;
 			roadwayDto.blocked_id = roadway.blocked_id;
 			roadwayDto.date_creation = roadway.date_creation; //dateFormat.format(roadwayModel_Obj.date_creation);
 			roadwayDto.date_change = roadway.date_change;// dateFormat.format(roadwayModel_Obj.date_change);
@@ -197,6 +209,13 @@ public class RoadwayDto implements Serializable{
 					roadway.tariffPlan.fuelconsumption_plan, roadway.tariffPlan.tolls_plan, roadway.tariffPlan.dimension_plan, roadway.tariffPlan.antt_plan, 
 					roadway.tariffPlan.fragile_plan, roadway.tariffPlan.persishable_plan, roadway.tariffPlan.reshipping_plan); 
 			roadwayDto.tariffPlan = tariffPlanDto; 
+
+			// Transport-Entity
+			TransportDto transportDto = new TransportDto(roadway.transport.name_transport, roadway.transport.identifier, roadway.transport.initials,
+					roadway.transport.transport_type, roadway.transport.restriction, roadway.transport.coditions, roadway.transport.weight_max,
+					roadway.transport.unity_weight, roadway.transport.heightDimension_max, roadway.transport.widthDimension_max, 
+					roadway.transport.lengthDimension_max, tariffPlan);
+			roadwayDto.transport = transportDto; 
 
 			
 			// CATEGORY-Entity
