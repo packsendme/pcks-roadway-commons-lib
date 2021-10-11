@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.packsendme.roadbrewa.component.RoadwayManagerConstants;
 import com.packsendme.roadbrewa.entity.Location;
+import com.packsendme.roadway.constants.RoadwayManagerConstants;
 
 import lombok.Getter;
 import lombok.Setter;

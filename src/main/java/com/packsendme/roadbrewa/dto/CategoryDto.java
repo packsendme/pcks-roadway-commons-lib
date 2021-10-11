@@ -7,11 +7,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.packsendme.roadbrewa.component.RoadwayManagerConstants;
 import com.packsendme.roadbrewa.entity.Category;
 import com.packsendme.roadbrewa.entity.TariffPlan;
 import com.packsendme.roadbrewa.entity.Transport;
 import com.packsendme.roadbrewa.entity.Vehicle;
+import com.packsendme.roadway.constants.RoadwayManagerConstants;
 
 import lombok.Getter;
 import lombok.Setter;

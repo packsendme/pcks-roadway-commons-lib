@@ -2,11 +2,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.packsendme.lib.roadway</groupId>
-  <artifactId>pcks-roadbrewa-roadway-lib</artifactId>
+  <groupId>com.packsendme.roadway.lib</groupId>
+  <artifactId>pcks-roadway-commons-lib</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>pcks-roadbrewa-roadway-lib</name>
+  <name>pcks-roadway-commons-lib</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -90,12 +90,6 @@
         <scope>provided</scope>
     </dependency>
  
- 	<dependency>
-		<groupId>com.packsendme.lib.common</groupId>
-		<artifactId>pcks-common-lib</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</dependency>
-	
     <dependency>
     	<groupId>org.modelmapper</groupId>
     	<artifactId>modelmapper</artifactId>

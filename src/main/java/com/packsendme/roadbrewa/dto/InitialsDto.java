@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
-import com.packsendme.roadbrewa.component.RoadwayManagerConstants;
 import com.packsendme.roadbrewa.entity.Initials;
+import com.packsendme.roadway.constants.RoadwayManagerConstants;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -5,7 +5,7 @@ pipeline {
         stage('Git Checkout Repositorio') {
             steps {
  				git branch: 'develop',
-                url: 'https://github.com/packsendme/pcks-roadbrewa-roadway-lib.git'
+                url: 'https://github.com/packsendme/pcks-roadway-commons-lib.git'
             }
         }
         stage('Java Build') {

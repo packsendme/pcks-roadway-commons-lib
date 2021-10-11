@@ -8,8 +8,8 @@ import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 
-import com.packsendme.roadbrewa.component.RoadwayManagerConstants;
 import com.packsendme.roadbrewa.entity.UnityMeasurement;
+import com.packsendme.roadway.constants.RoadwayManagerConstants;
 
 import lombok.Getter;
 import lombok.Setter;

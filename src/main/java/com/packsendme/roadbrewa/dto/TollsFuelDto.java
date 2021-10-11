@@ -3,8 +3,8 @@ package com.packsendme.roadbrewa.dto;
 import java.io.Serializable;
 import java.text.ParseException;
 
-import com.packsendme.roadbrewa.component.RoadwayManagerConstants;
 import com.packsendme.roadbrewa.entity.TollsFuel;
+import com.packsendme.roadway.constants.RoadwayManagerConstants;
 
 import lombok.Getter;
 import lombok.Setter;
